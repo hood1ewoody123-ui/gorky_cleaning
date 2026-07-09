@@ -1,0 +1,524 @@
+# .cursorrules
+
+## Project Overview
+
+**Brand:** Горький Клининг (Gorky Cleaning)  
+**Domain:** gorkycleaning.ru  
+**Geo:** Нижний Новгород
+
+This project is a commercial cleaning company website built with:
+
+* Next.js 15+
+* React 19
+* TypeScript
+* Tailwind CSS 4
+* shadcn/ui
+* Radix UI
+* Motion
+* React Hook Form
+* Zod
+* Resend
+* Telegram Bot API
+
+The project must prioritize:
+
+1. Conversion
+2. SEO
+3. Performance
+4. Scalability
+5. Maintainability
+
+---
+
+# Roadmap Progress Rules
+
+**Source of truth:** `roadmap.md`
+
+After every completed action, task, or subtask that maps to the roadmap:
+
+* Update `roadmap.md` in the same session — do not defer.
+* Mark completed items with `- [x]` (checkbox with x / крестик).
+* Leave pending items as `- [ ]`.
+* If a task is partially done, leave it unchecked and add a short note if needed.
+* When an entire stage is complete, update the **Текущий этап** line at the top of `roadmap.md`.
+* Never finish a roadmap-related task without updating progress in `roadmap.md`.
+
+---
+
+# General Rules
+
+Always:
+
+* Use TypeScript.
+* Use strict typing.
+* Prefer Server Components.
+* Minimize Client Components.
+* Write clean production-ready code.
+* Follow Next.js App Router best practices.
+* Avoid quick hacks.
+* Avoid duplicated code.
+* Prefer reusable abstractions.
+
+Never:
+
+* Use any.
+* Use inline styles.
+* Create giant components.
+* Hardcode repeated values.
+* Ignore accessibility.
+
+---
+
+# Architecture Rules
+
+Follow this structure:
+
+src/
+
+app/
+
+components/
+
+features/
+
+shared/
+
+lib/
+
+hooks/
+
+constants/
+
+types/
+
+styles/
+
+---
+
+# Component Rules
+
+Maximum component size:
+
+300 lines
+
+If larger:
+
+Split into smaller components.
+
+---
+
+Use:
+
+* feature components
+* shared components
+* ui components
+
+Example:
+
+features/home/hero
+
+features/home/services
+
+features/home/calculator
+
+features/home/faq
+
+---
+
+# Naming Rules
+
+Components:
+
+PascalCase
+
+Example:
+
+HeroSection.tsx
+
+ServicesCatalog.tsx
+
+CalculatorForm.tsx
+
+---
+
+Hooks:
+
+useSomething.ts
+
+Example:
+
+useLeadForm.ts
+
+useMediaQuery.ts
+
+---
+
+Utilities:
+
+camelCase
+
+Example:
+
+formatPrice.ts
+
+sendTelegramLead.ts
+
+---
+
+# Styling Rules
+
+Use:
+
+Tailwind CSS
+
+shadcn/ui
+
+CSS variables
+
+Design tokens
+
+Never:
+
+* write large custom CSS files
+* use CSS frameworks besides Tailwind
+* use inline style objects
+
+---
+
+# Design System Rules
+
+Use design tokens only.
+
+Spacing:
+
+4
+8
+12
+16
+24
+32
+48
+64
+96
+128
+
+Radius:
+
+12
+20
+28
+36
+
+Never invent random spacing values.
+
+---
+
+# Typography Rules
+
+Font:
+
+Inter
+
+Fallback:
+
+system-ui
+
+Use semantic hierarchy.
+
+Only:
+
+H1
+
+H2
+
+H3
+
+H4
+
+Body
+
+Small
+
+Caption
+
+---
+
+# Accessibility Rules
+
+Always:
+
+* semantic HTML
+* proper labels
+* aria attributes
+* keyboard navigation
+* visible focus states
+
+Target Lighthouse Accessibility:
+
+95+
+
+---
+
+# Performance Rules
+
+Target Lighthouse:
+
+Performance 95+
+
+SEO 100
+
+Accessibility 95+
+
+Best Practices 100
+
+---
+
+Always:
+
+* optimize images
+* use next/image
+* lazy load heavy components
+* use dynamic imports when needed
+
+Never:
+
+* import huge libraries unnecessarily
+* block rendering
+
+---
+
+# SEO Rules
+
+**Canonical domain:** https://gorkycleaning.ru
+
+Every page must include:
+
+* title
+* description
+* canonical
+* open graph
+* twitter card
+
+Use Metadata API.
+
+Generate structured data when relevant.
+
+---
+
+Supported schemas:
+
+* LocalBusiness
+* Service
+* FAQ
+* Review
+* Breadcrumb
+
+---
+
+# Forms Rules
+
+Use:
+
+* React Hook Form
+* Zod
+
+Validation must exist for every field.
+
+Never submit unvalidated data.
+
+---
+
+# Lead Handling Rules
+
+All forms must support:
+
+1. Telegram delivery
+2. Email delivery via Resend
+
+Lead payload:
+
+* source
+* page
+* name
+* phone
+* service
+* area
+
+Always log failures.
+
+---
+
+# Animation Rules
+
+Use Motion.
+
+Animations must be:
+
+* subtle
+* fast
+* premium
+
+Avoid:
+
+* excessive parallax
+* bouncing effects
+* distracting motion
+
+Duration:
+
+200ms–500ms
+
+---
+
+# Home Page Rules
+
+Homepage sections:
+
+1 Hero
+
+2 Trust Metrics
+
+3 Process
+
+4 What's Included
+
+5 Services Catalog
+
+6 Cost Calculator
+
+7 Statistics
+
+8 Cases
+
+9 Founder
+
+10 Trust Dashboard
+
+11 Work Process
+
+12 Team
+
+13 FAQ
+
+14 CTA
+
+15 Footer
+
+Do not change section order without explicit request.
+
+---
+
+# Services Pages Rules
+
+All service pages must use a shared template.
+
+Structure:
+
+Hero
+
+Description
+
+Benefits
+
+Included Services
+
+Pricing
+
+Calculator
+
+Cases
+
+Reviews
+
+FAQ
+
+CTA
+
+---
+
+# Mobile Rules
+
+Mobile-first development.
+
+Support:
+
+320px
+
+360px
+
+390px
+
+430px
+
+768px
+
+1024px
+
+1440px
+
+1920px
+
+No horizontal scrolling.
+
+No layout shifts.
+
+---
+
+# Code Quality Rules
+
+Before completing any task:
+
+* remove dead code
+* remove unused imports
+* remove console logs
+* remove duplicate logic
+
+Always prefer:
+
+* composition
+* reusable components
+* typed utilities
+
+---
+
+# Deployment Rules
+
+Environment variables must never be hardcoded.
+
+Use:
+
+.env.local
+
+.env.production
+
+Validate env variables.
+
+---
+
+# Documentation Rules
+
+For every major feature:
+
+Create:
+
+* purpose
+* architecture
+* dependencies
+* usage notes
+
+---
+
+# Final Principle
+
+Every implementation must satisfy:
+
+1. Production-ready
+2. SEO-friendly
+3. Mobile-first
+4. Accessible
+5. Scalable
+6. High-conversion
+7. Clean architecture
+8. Modern design system
+9. Fast performance
+10. Enterprise-level code quality
