@@ -1,7 +1,10 @@
+"use client";
+
 import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { HERO_CONTENT } from "@/constants/home";
+import { useLeadDialog } from "@/features/leads/LeadDialogProvider";
 import { cn } from "@/lib/utils";
 
 type HeroOfferProps = {
@@ -9,6 +12,8 @@ type HeroOfferProps = {
 };
 
 export function HeroOffer({ className }: HeroOfferProps) {
+  const { openLeadDialog } = useLeadDialog();
+
   return (
     <div className={cn("flex max-w-3xl flex-col gap-5 md:gap-6", className)}>
       <div className="flex flex-col gap-3 md:max-w-2xl md:gap-4">
@@ -21,7 +26,14 @@ export function HeroOffer({ className }: HeroOfferProps) {
       </div>
 
       <div className="pt-0.5">
-        <Button size="pill-sm" className="shadow-[var(--shadow-soft)]">
+        <Button
+          type="button"
+          size="pill-sm"
+          className="shadow-[var(--shadow-soft)]"
+          onClick={() =>
+            openLeadDialog({ variant: "main", source: "hero-offer-cta" })
+          }
+        >
           {HERO_CONTENT.cta}
         </Button>
       </div>

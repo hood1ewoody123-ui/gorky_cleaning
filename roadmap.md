@@ -9,7 +9,7 @@
 - `- [x]` — выполнено (крестик в чекбоксе)
 - `- [ ]` — ожидает выполнения
 
-**Текущий этап:** Этап 4 — Создание главной страницы
+**Текущий этап:** Этап 13 — деплой на Timeweb (рядом с другим сайтом)
 
 ---
 
@@ -55,7 +55,6 @@
 
 ## Notifications
 
-- Resend
 - Telegram Bot API
 
 ## Analytics
@@ -208,8 +207,8 @@ Small:
 ### Настроить
 
 - [x] aliases
-- [x] env
 - [x] конфигурации
+- [ ] env — см. **Этап 12** (ключи перед деплоем)
 
 ### Результат
 
@@ -304,46 +303,46 @@ Small:
 
 ## Блок 2 — Цифры доверия
 
-- [ ] Цифры доверия
+- [x] Цифры доверия
 
 ## Блок 3 — Как проходит уборка
 
-- [ ] Как проходит уборка
+- [x] Как проходит уборка
 
 ## Блок 4 — Что входит в уборку
 
-- [ ] Что входит в уборку
-- [ ] Интерактивные тултипы
+- [x] Что входит в уборку
+- [x] Интерактивные тултипы
 
 ## Блок 5 — Каталог услуг
 
-- [ ] Фильтры
-- [ ] Теги
-- [ ] Карточки
+- [x] Фильтры
+- [x] Теги
+- [x] Карточки
 
 ## Блок 6 — Калькулятор стоимости
 
-- [ ] Калькулятор стоимости
+- [x] Калькулятор стоимости
 
 ## Блок 7 — Дополнительные показатели
 
-- [ ] Дополнительные показатели
+- [x] Дополнительные показатели
 
 ## Блок 8 — Примеры работ
 
-- [ ] Примеры работ
+- [x] Примеры работ
 
 ## Блок 9 — О руководителе
 
-- [ ] О руководителе
+- [x] О руководителе
 
 ## Блок 10 — Dashboard доверия
 
-- [ ] Dashboard доверия
+- [x] Dashboard доверия
 
 ## Блок 11 — Этапы работы
 
-- [ ] Этапы работы
+- [x] Этапы работы
 
 ## Блок 12 — Команда
 
@@ -351,15 +350,15 @@ Small:
 
 ## Блок 13 — FAQ
 
-- [ ] FAQ
+- [x] FAQ
 
 ## Блок 14 — Финальный CTA
 
-- [ ] Финальный CTA
+- [x] Финальный CTA
 
 ## Блок 15 — Footer
 
-- [ ] Footer
+- [x] Footer
 
 ---
 
@@ -369,19 +368,19 @@ Small:
 
 ### Проверить breakpoints
 
-- [ ] 320px
-- [ ] 360px
-- [ ] 390px
-- [ ] 430px
-- [ ] 768px
-- [ ] 1024px
-- [ ] 1280px
-- [ ] 1440px
-- [ ] 1920px
+- [x] 320px
+- [x] 360px
+- [x] 390px
+- [x] 430px
+- [x] 768px
+- [x] 1024px
+- [x] 1280px
+- [x] 1440px
+- [x] 1920px
 
 ### Результат
 
-- [ ] Pixel Perfect Responsive
+- [x] Pixel Perfect Responsive
 
 ---
 
@@ -391,26 +390,17 @@ Small:
 
 ### Подключить
 
-- [ ] React Hook Form
-- [ ] Zod
+- [x] React Hook Form
+- [x] Zod
 
-### Интеграция Telegram
+### Доставка заявок (Telegram)
 
-Новая заявка:
-
-- [ ] имя
-- [ ] телефон
-- [ ] услуга
-- [ ] площадь
-
-### Интеграция Resend
-
-- [ ] Письма менеджеру
-- [ ] Письма клиенту
+- [x] Уведомление менеджеру в Telegram
+- [x] имя, телефон, услуга, площадь (+ email/комментарий в сообщении, если указаны)
 
 ### Результат
 
-- [ ] Все заявки доставляются
+- [x] Все заявки доставляются
 
 ---
 
@@ -422,39 +412,39 @@ Small:
 
 ### Настроить
 
-- [ ] Metadata API
-- [ ] Title
-- [ ] Description
-- [ ] Keywords
-- [ ] Canonical
-- [ ] Open Graph
-- [ ] Twitter Cards
-- [ ] Robots
-- [ ] Sitemap
+- [x] Metadata API
+- [x] Title
+- [x] Description
+- [x] Keywords
+- [x] Canonical
+- [x] Open Graph
+- [x] Twitter Cards
+- [x] Robots
+- [x] Sitemap
 
 ### Добавить JSON-LD
 
-- [ ] Local Business Schema
-- [ ] Service Schema
-- [ ] FAQ Schema
-- [ ] Review Schema
-- [ ] Breadcrumb Schema
+- [x] Local Business Schema
+- [x] Service Schema
+- [x] FAQ Schema
+- [x] Review Schema
+- [x] Breadcrumb Schema
 
 ### Настроить файлы
 
-- [ ] robots.txt
-- [ ] sitemap.xml
+- [x] robots.txt
+- [x] sitemap.xml
 
 ### Создать assets
 
-- [ ] favicon
-- [ ] apple-touch-icon
-- [ ] webmanifest
-- [ ] OG Banner 1200x630
+- [x] favicon
+- [x] apple-touch-icon
+- [x] webmanifest
+- [x] OG Banner 1200x630
 
 ### Результат
 
-- [ ] Полная SEO-готовность
+- [x] Полная SEO-готовность
 
 ---
 
@@ -465,64 +455,12 @@ Small:
 ### Подключить
 
 - [ ] Google Analytics
-- [ ] Yandex Metrica
-- [ ] Goals
-- [ ] Events
-- [ ] Scroll Tracking
-- [ ] Form Submit Tracking
-- [ ] CTA Tracking
-
----
-
-# ЭТАП 9
-
-## Шаблон страницы услуги
-
-- [ ] Создать универсальный шаблон
-
-### Структура
-
-- [ ] Hero
-- [ ] Описание
-- [ ] Преимущества
-- [ ] Что входит
-- [ ] Стоимость
-- [ ] Калькулятор
-- [ ] Кейсы
-- [ ] Отзывы
-- [ ] FAQ
-- [ ] CTA
-
-### Примеры страниц
-
-- [ ] /uborka-kvartir
-- [ ] /generalnaya-uborka
-- [ ] /uborka-posle-remonta
-- [ ] /myte-okon
-- [ ] /himchistka-divana
-- [ ] /uborka-ofisov
-
-### Результат
-
-- [ ] Новые страницы создаются через конфиг
-
----
-
-# ЭТАП 10
-
-## SEO посадочные страницы
-
-- [ ] Создать систему генерации страниц
-
-### Примеры
-
-- [ ] /uborka-kvartir-nizhniy-novgorod
-- [ ] /generalnaya-uborka-nizhniy-novgorod
-- [ ] /myte-okon-nizhniy-novgorod
-
-### Результат
-
-- [ ] Масштабируемая SEO структура
+- [x] Yandex Metrica
+- [x] Goals
+- [x] Events
+- [x] Scroll Tracking
+- [x] Form Submit Tracking
+- [x] CTA Tracking
 
 ---
 
@@ -539,60 +477,137 @@ Small:
 
 ### Оптимизация
 
-- [ ] Images
-- [ ] Fonts
-- [ ] JS bundles
-- [ ] Lazy Loading
-- [ ] Dynamic Imports
-- [ ] Caching
+- [x] Images (AVIF/WebP, cache)
+- [x] Fonts (display: swap)
+- [x] JS bundles (dynamic imports тяжёлых секций)
+- [x] Lazy Loading (deferred sections, hero video metadata)
+- [x] Dynamic Imports (калькулятор, каталог, отзывы, motion)
+- [x] Caching (static assets headers)
 
 ---
 
 # ЭТАП 12
 
-## Тестовый деплой
+## ENV и ключи (перед деплоем)
 
-### Развернуть
+> **Да — ключи лучше подготовить до первого деплоя.**  
+> `NEXT_PUBLIC_*` попадают в билд при `npm run build`, поэтому на сервере `.env.production` нужен **до сборки**.
 
-- [ ] Vercel Preview
+### Локально (проверка форм, опционально)
 
-### Проверить
+- [ ] Скопировать `.env.example` → `.env.local`
+- [ ] Заполнить ключи и проверить отправку заявки локально
 
-- [ ] формы
-- [ ] адаптивность
-- [ ] SEO
-- [ ] скорость
+### Переменные
 
-### Результат
+- [ ] `NEXT_PUBLIC_SITE_URL=https://gorkycleaning.ru`
+- [ ] `NEXT_PUBLIC_YANDEX_METRIKA_ID=110396882`
+- [ ] `TELEGRAM_BOT_TOKEN`
+- [ ] `TELEGRAM_CHAT_ID` (chat id аккаунта @prtcreator или группы)
 
-- [ ] Полностью протестированная версия
+### На сервере
+
+- [ ] `/var/www/gorkycleaning/.env.production` — **не коммитить в git**
+- [ ] Права на файл: только владелец (`chmod 600`)
 
 ---
 
 # ЭТАП 13
 
-## Продакшен деплой
+## Продакшен деплой (Timeweb VPS)
 
-### Каноничная схема сервера
+Рядом с другим сайтом на том же сервере. **Правило:** не редактировать конфиги другого сайта — только добавить новые файлы.
+
+Конфиги в репо: `deploy/nginx/gorkycleaning.conf`, `deploy/ecosystem.config.cjs`, `deploy/deploy.sh`
+
+### Схема (изоляция)
 
 ```
 /var/www/
-├── existing-project
-├── gorkycleaning
-├── nginx
-└── shared
+├── <другой-сайт>/          → 127.0.0.1:3000  (не трогаем)
+└── gorkycleaning/          → 127.0.0.1:3002  (этот проект)
+
+nginx:
+  other-domain.ru     → server block A → :3000
+  gorkycleaning.ru    → server block B → :3002   ← новый файл
 ```
 
-gorkycleaning.ru → nginx → localhost:3002  
-Другой сайт → localhost:3000
+Фавиконы, manifest, sitemap — у каждого домена свои: nginx маршрутизирует по `server_name`, конфликтов нет.
 
-### Развертывание
+### 0. Перед началом (локально)
 
-- [ ] Отдельный проект
-- [ ] Отдельный PM2 процесс
-- [ ] Отдельный build
-- [ ] Отдельный .env
-- [ ] nginx → gorkycleaning.ru → localhost:3002
+- [x] `.env.local` — формы и Telegram проверены
+- [ ] `git push` в remote
+- [ ] Записать IP VPS и домен второго сайта
+
+### 1. DNS — переключение с Tilda
+
+| Запись | Было     | Станет                      |
+| ------ | -------- | --------------------------- |
+| `@` A  | IP Tilda | **IP VPS**                  |
+| `www`  | Tilda    | **IP VPS** или CNAME на `@` |
+
+- [ ] Сначала деплой на VPS + проверка через `curl -H "Host: gorkycleaning.ru" http://IP_VPS`
+- [ ] Потом смена DNS (Tilda оставить резервом 1–2 дня)
+- [ ] `dig gorkycleaning.ru +short` → IP VPS
+
+### 2. Сервер — только добавление
+
+```bash
+ssh user@IP_VPS
+sudo nginx -T | grep server_name   # существующие домены — их файлы не трогать
+```
+
+- [ ] Node.js 20+, PM2, nginx, certbot
+
+### 3. Клонирование и env
+
+```bash
+sudo mkdir -p /var/www/gorkycleaning && sudo chown $USER:$USER /var/www/gorkycleaning
+git clone <repo-url> /var/www/gorkycleaning
+cd /var/www/gorkycleaning
+cp .env.example .env.production && nano .env.production && chmod 600 .env.production
+```
+
+- [ ] `.env.production` **до** `npm run build`
+
+### 4. Сборка и PM2 (порт 3002)
+
+```bash
+npm ci && npm run build
+pm2 start deploy/ecosystem.config.cjs && pm2 save && pm2 startup
+curl -I http://127.0.0.1:3002
+```
+
+### 5. nginx — новый файл
+
+```bash
+sudo cp deploy/nginx/gorkycleaning.conf /etc/nginx/sites-available/gorkycleaning
+sudo ln -sf /etc/nginx/sites-available/gorkycleaning /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+### 6. SSL
+
+```bash
+sudo certbot --nginx -d gorkycleaning.ru -d www.gorkycleaning.ru
+```
+
+### 7. Обновления
+
+```bash
+bash deploy/deploy.sh
+```
+
+### 8. После переключения DNS
+
+- [ ] Яндекс Вебмастер, Метрика, формы, favicon/manifest
+- [ ] Tilda отключить через 2–3 дня
+
+### Результат
+
+- [ ] https://gorkycleaning.ru — новый сайт
+- [ ] Другой сайт на VPS не затронут
 
 ---
 
@@ -602,18 +617,13 @@ gorkycleaning.ru → nginx → localhost:3002
 
 ### Проверить
 
-- [ ] SEO
-- [ ] Метрики
-- [ ] Sitemap
-- [ ] Robots
-- [ ] Формы
-- [ ] Telegram
-- [ ] Resend
-- [ ] Lighthouse
-- [ ] Open Graph
-- [ ] Мобильные устройства
-- [ ] SSL
-- [ ] Индексацию
+- [ ] SEO (title, OG, sitemap.xml, robots.txt)
+- [ ] Яндекс Метрика (визиты в «Онлайн»)
+- [ ] Формы → Telegram
+- [ ] Мобильная версия
+- [ ] SSL (https)
+- [ ] Lighthouse (быстрая проверка)
+- [ ] Яндекс Вебмастер
 
 ---
 

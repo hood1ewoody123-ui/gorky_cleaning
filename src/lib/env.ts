@@ -2,9 +2,7 @@ import { z } from "zod";
 
 const envSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.string().url().default("https://gorkycleaning.ru"),
-  RESEND_API_KEY: z.string().optional(),
-  RESEND_FROM_EMAIL: z.string().email().optional(),
-  RESEND_TO_EMAIL: z.string().email().optional(),
+  NEXT_PUBLIC_YANDEX_METRIKA_ID: z.string().optional(),
   TELEGRAM_BOT_TOKEN: z.string().optional(),
   TELEGRAM_CHAT_ID: z.string().optional(),
 });

@@ -1,6 +1,6 @@
 "use client";
 
-import { Building2, Menu } from "lucide-react";
+import { Menu, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -13,7 +13,9 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { CONTACT, HERO_CONTENT, NAV_LINKS } from "@/constants/home";
+import { useLeadDialog } from "@/features/leads/LeadDialogProvider";
 import { SITE } from "@/constants/site";
+import { BrandLogo } from "@/shared/brand/BrandLogo";
 import { cn } from "@/lib/utils";
 
 type HeroHeaderProps = {
@@ -22,6 +24,12 @@ type HeroHeaderProps = {
 
 export function HeroHeader({ className }: HeroHeaderProps) {
   const [open, setOpen] = useState(false);
+  const { openLeadDialog } = useLeadDialog();
+
+  const openConsultation = () => {
+    setOpen(false);
+    openLeadDialog({ variant: "consultation", source: "hero-header" });
+  };
 
   return (
     <header
@@ -30,18 +38,12 @@ export function HeroHeader({ className }: HeroHeaderProps) {
         className,
       )}
     >
-      <Link href="/" className="flex shrink-0 items-center gap-3">
-        <div className="flex size-10 items-center justify-center rounded-[var(--radius-xs)] bg-primary shadow-[var(--shadow-soft)]">
-          <Building2 className="size-5 text-primary-foreground" aria-hidden />
-        </div>
-        <div className="flex flex-col leading-tight text-white">
-          <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/75">
-            {SITE.nameEn.split(" ")[0]}
-          </span>
-          <span className="text-sm font-bold uppercase tracking-wide">
-            Клининг
-          </span>
-        </div>
+      <Link
+        href="/"
+        className="flex shrink-0 items-center"
+        aria-label={SITE.name}
+      >
+        <BrandLogo variant="light" className="h-7 sm:h-8 md:h-9" />
       </Link>
 
       <nav
@@ -69,7 +71,13 @@ export function HeroHeader({ className }: HeroHeaderProps) {
           </a>
           <span className="text-xs text-white/70">{CONTACT.region}</span>
         </div>
-        <Button size="pill-sm" variant="secondary" className="bg-white/95">
+        <Button
+          type="button"
+          size="pill-sm"
+          variant="secondary"
+          className="bg-white/95"
+          onClick={openConsultation}
+        >
           {HERO_CONTENT.headerCta}
         </Button>
       </div>
@@ -92,7 +100,7 @@ export function HeroHeader({ className }: HeroHeaderProps) {
             <DrawerTitle>{SITE.name}</DrawerTitle>
           </DrawerHeader>
           <nav
-            className="flex flex-col gap-2 px-4 pb-8"
+            className="flex flex-col gap-2 px-4 pb-[max(2rem,env(safe-area-inset-bottom))]"
             aria-label="Мобильная навигация"
           >
             {NAV_LINKS.map((link) => (
@@ -107,11 +115,17 @@ export function HeroHeader({ className }: HeroHeaderProps) {
             ))}
             <a
               href={CONTACT.phoneHref}
-              className="mt-4 px-3 text-lg font-semibold text-primary"
+              className="mt-4 inline-flex items-center gap-2 px-3 text-lg font-semibold text-primary"
             >
+              <PhoneCall className="size-5" aria-hidden />
               {CONTACT.phoneDisplay}
             </a>
-            <Button size="pill" className="mt-4 w-full">
+            <Button
+              type="button"
+              size="pill"
+              className="mt-4 w-full"
+              onClick={openConsultation}
+            >
               {HERO_CONTENT.headerCta}
             </Button>
           </nav>

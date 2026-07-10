@@ -9,14 +9,17 @@ export function HeroSection() {
       className="section-y !pb-8 !pt-4 md:!py-6"
     >
       <div className="container-app">
-        <div className="relative isolate min-h-[580px] overflow-hidden rounded-[var(--radius-xl)] shadow-[var(--shadow-elevated)] md:min-h-[640px] lg:min-h-[680px]">
+        <div
+          data-hero-shell
+          className="relative isolate min-h-0 overflow-hidden rounded-[var(--radius-xl)] shadow-[var(--shadow-elevated)] sm:min-h-[580px] md:min-h-[640px] lg:min-h-[680px]"
+        >
           <video
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster="/videos/hero-poster.jpg"
             aria-hidden
           >
@@ -33,7 +36,7 @@ export function HeroSection() {
             <HeroHeader />
 
             <div className="flex flex-1 flex-col justify-end px-4 pb-5 pt-4 md:px-8 md:pb-7 md:pt-6 lg:px-10 lg:pb-8 lg:pt-8">
-              <div className="grid w-full items-end gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 xl:gap-16">
+              <div className="grid w-full items-end gap-5 sm:gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 xl:gap-16">
                 <HeroOffer />
                 <HeroQuickForm className="mx-auto lg:mx-0" />
               </div>

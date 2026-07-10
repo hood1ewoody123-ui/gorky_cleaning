@@ -94,10 +94,13 @@
 
   html {
     @apply font-sans;
+    scroll-padding-top: calc(5rem + env(safe-area-inset-top, 0px));
+    overflow-x: clip;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
+    overflow-x: clip;
   }
 }

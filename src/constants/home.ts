@@ -7,8 +7,10 @@ export const NAV_LINKS = [
 ] as const;
 
 export const CONTACT = {
-  phoneDisplay: "+7 (831) 000-00-00",
-  phoneHref: "tel:+78310000000",
+  phoneDisplay: "+7 (910) 124-31-65",
+  phoneHref: "tel:+79101243165",
+  email: "gorkiyklining@yanex.ru",
+  emailHref: "mailto:gorkiyklining@yanex.ru",
   region: "Нижний Новгород и область",
 } as const;
 

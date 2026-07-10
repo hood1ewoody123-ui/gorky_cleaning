@@ -1,0 +1,462 @@
+export type ServiceCatalogCategory = {
+  id: string;
+  label: string;
+};
+
+export type ServiceCatalogItem = {
+  id: string;
+  categoryId: string;
+  name: string;
+  unitLabel: string;
+  priceFrom: number;
+  priceSuffix: string;
+};
+
+export const SERVICES_CATALOG_HEADING = "Услуги и ориентировочные цены";
+
+export const SERVICES_CATALOG_DESCRIPTION =
+  "Выберите формат уборки для квартиры, дома, офиса или коммерческого объекта. Стоимость указана от — точную сумму рассчитаем после уточнения деталей.";
+
+export const SERVICES_CATALOG_INITIAL_VISIBLE = 6;
+
+export const SERVICE_CATALOG_CATEGORIES: ServiceCatalogCategory[] = [
+  { id: "apartments", label: "Квартиры" },
+  { id: "houses", label: "Дома" },
+  { id: "offices", label: "Офисы" },
+  { id: "premises", label: "Помещения" },
+  { id: "special", label: "Спецуборки" },
+  { id: "dry-cleaning", label: "Химчистка" },
+  { id: "additional", label: "Дополнительно" },
+];
+
+export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
+  // Квартиры
+  {
+    id: "apt-support",
+    categoryId: "apartments",
+    name: "Поддерживающая уборка",
+    unitLabel: "м²",
+    priceFrom: 95,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "apt-general",
+    categoryId: "apartments",
+    name: "Генеральная уборка",
+    unitLabel: "м²",
+    priceFrom: 160,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "apt-post-renovation",
+    categoryId: "apartments",
+    name: "Уборка после ремонта",
+    unitLabel: "м²",
+    priceFrom: 195,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "apt-move-in",
+    categoryId: "apartments",
+    name: "Уборка перед заселением",
+    unitLabel: "м²",
+    priceFrom: 180,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "apt-studio",
+    categoryId: "apartments",
+    name: "Уборка студии",
+    unitLabel: "за объект",
+    priceFrom: 3900,
+    priceSuffix: "₽",
+  },
+  {
+    id: "apt-one-room",
+    categoryId: "apartments",
+    name: "Уборка однокомнатной квартиры",
+    unitLabel: "за объект",
+    priceFrom: 4900,
+    priceSuffix: "₽",
+  },
+  {
+    id: "apt-two-room",
+    categoryId: "apartments",
+    name: "Уборка двухкомнатной квартиры",
+    unitLabel: "за объект",
+    priceFrom: 6500,
+    priceSuffix: "₽",
+  },
+  {
+    id: "apt-three-room",
+    categoryId: "apartments",
+    name: "Уборка трёхкомнатной квартиры",
+    unitLabel: "за объект",
+    priceFrom: 8200,
+    priceSuffix: "₽",
+  },
+
+  // Дома
+  {
+    id: "house-support",
+    categoryId: "houses",
+    name: "Уборка частного дома",
+    unitLabel: "м²",
+    priceFrom: 120,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "house-general",
+    categoryId: "houses",
+    name: "Генеральная уборка дома",
+    unitLabel: "м²",
+    priceFrom: 175,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "house-cottage",
+    categoryId: "houses",
+    name: "Уборка коттеджа",
+    unitLabel: "м²",
+    priceFrom: 145,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "house-post-renovation",
+    categoryId: "houses",
+    name: "Уборка после ремонта в доме",
+    unitLabel: "м²",
+    priceFrom: 210,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "house-territory",
+    categoryId: "houses",
+    name: "Уборка прилегающей территории",
+    unitLabel: "м²",
+    priceFrom: 35,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "house-garage",
+    categoryId: "houses",
+    name: "Уборка гаража",
+    unitLabel: "м²",
+    priceFrom: 90,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "house-balcony",
+    categoryId: "houses",
+    name: "Уборка балкона и террасы",
+    unitLabel: "м²",
+    priceFrom: 110,
+    priceSuffix: "₽/м²",
+  },
+
+  // Офисы
+  {
+    id: "office-daily",
+    categoryId: "offices",
+    name: "Ежедневная уборка офиса",
+    unitLabel: "м²",
+    priceFrom: 40,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "office-general",
+    categoryId: "offices",
+    name: "Генеральная уборка офиса",
+    unitLabel: "м²",
+    priceFrom: 65,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "office-post-renovation",
+    categoryId: "offices",
+    name: "Уборка офиса после ремонта",
+    unitLabel: "м²",
+    priceFrom: 85,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "office-windows",
+    categoryId: "offices",
+    name: "Мойка окон в офисе",
+    unitLabel: "м²",
+    priceFrom: 120,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "office-retail",
+    categoryId: "offices",
+    name: "Уборка торгового зала",
+    unitLabel: "м²",
+    priceFrom: 55,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "office-coworking",
+    categoryId: "offices",
+    name: "Уборка коворкинга",
+    unitLabel: "м²",
+    priceFrom: 48,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "office-meeting-room",
+    categoryId: "offices",
+    name: "Уборка переговорной",
+    unitLabel: "за помещение",
+    priceFrom: 1800,
+    priceSuffix: "₽",
+  },
+
+  // Помещения
+  {
+    id: "premises-warehouse",
+    categoryId: "premises",
+    name: "Уборка складов",
+    unitLabel: "м²",
+    priceFrom: 35,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "premises-industrial",
+    categoryId: "premises",
+    name: "Клининг производственных помещений",
+    unitLabel: "м²",
+    priceFrom: 45,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "premises-medical",
+    categoryId: "premises",
+    name: "Уборка медицинских кабинетов",
+    unitLabel: "м²",
+    priceFrom: 90,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "premises-restaurant",
+    categoryId: "premises",
+    name: "Уборка ресторанов и кафе",
+    unitLabel: "м²",
+    priceFrom: 75,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "premises-beauty",
+    categoryId: "premises",
+    name: "Уборка салонов красоты",
+    unitLabel: "м²",
+    priceFrom: 85,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "premises-fitness",
+    categoryId: "premises",
+    name: "Уборка фитнес-клуба",
+    unitLabel: "м²",
+    priceFrom: 70,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "premises-school",
+    categoryId: "premises",
+    name: "Уборка учебных помещений",
+    unitLabel: "м²",
+    priceFrom: 50,
+    priceSuffix: "₽/м²",
+  },
+
+  // Спецуборки
+  {
+    id: "special-flood",
+    categoryId: "special",
+    name: "Уборка после затопления",
+    unitLabel: "м²",
+    priceFrom: 450,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "special-fire",
+    categoryId: "special",
+    name: "Уборка после пожара",
+    unitLabel: "м²",
+    priceFrom: 520,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "special-move",
+    categoryId: "special",
+    name: "Уборка при переезде",
+    unitLabel: "м²",
+    priceFrom: 170,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "special-disinfection",
+    categoryId: "special",
+    name: "Дезинфекция помещений",
+    unitLabel: "м²",
+    priceFrom: 55,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "special-antibacterial",
+    categoryId: "special",
+    name: "Антибактериальная обработка",
+    unitLabel: "м²",
+    priceFrom: 60,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "special-construction-dust",
+    categoryId: "special",
+    name: "Удаление строительной пыли",
+    unitLabel: "м²",
+    priceFrom: 85,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "special-odor",
+    categoryId: "special",
+    name: "Удаление запахов",
+    unitLabel: "за объект",
+    priceFrom: 3500,
+    priceSuffix: "₽",
+  },
+
+  // Химчистка
+  {
+    id: "dry-sofa",
+    categoryId: "dry-cleaning",
+    name: "Химчистка дивана",
+    unitLabel: "за предмет",
+    priceFrom: 2800,
+    priceSuffix: "₽",
+  },
+  {
+    id: "dry-armchair",
+    categoryId: "dry-cleaning",
+    name: "Химчистка кресла",
+    unitLabel: "за предмет",
+    priceFrom: 1800,
+    priceSuffix: "₽",
+  },
+  {
+    id: "dry-mattress",
+    categoryId: "dry-cleaning",
+    name: "Химчистка матраса",
+    unitLabel: "за предмет",
+    priceFrom: 2200,
+    priceSuffix: "₽",
+  },
+  {
+    id: "dry-carpet",
+    categoryId: "dry-cleaning",
+    name: "Химчистка ковра",
+    unitLabel: "м²",
+    priceFrom: 380,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "dry-curtains",
+    categoryId: "dry-cleaning",
+    name: "Химчистка штор",
+    unitLabel: "м²",
+    priceFrom: 350,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "dry-car-seat",
+    categoryId: "dry-cleaning",
+    name: "Химчистка салона автомобиля",
+    unitLabel: "за объект",
+    priceFrom: 4500,
+    priceSuffix: "₽",
+  },
+  {
+    id: "dry-office-chair",
+    categoryId: "dry-cleaning",
+    name: "Химчистка офисного кресла",
+    unitLabel: "за предмет",
+    priceFrom: 1200,
+    priceSuffix: "₽",
+  },
+
+  // Дополнительно
+  {
+    id: "add-windows",
+    categoryId: "additional",
+    name: "Мойка окон",
+    unitLabel: "м²",
+    priceFrom: 450,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "add-windows-renovation",
+    categoryId: "additional",
+    name: "Мойка окон после ремонта",
+    unitLabel: "м²",
+    priceFrom: 550,
+    priceSuffix: "₽/м²",
+  },
+  {
+    id: "add-ironing",
+    categoryId: "additional",
+    name: "Глажка",
+    unitLabel: "30 минут",
+    priceFrom: 500,
+    priceSuffix: "₽",
+  },
+  {
+    id: "add-kitchen",
+    categoryId: "additional",
+    name: "Уборка кухни",
+    unitLabel: "от 2 часов",
+    priceFrom: 5500,
+    priceSuffix: "₽",
+  },
+  {
+    id: "add-dishes",
+    categoryId: "additional",
+    name: "Мытьё посуды",
+    unitLabel: "30 минут",
+    priceFrom: 450,
+    priceSuffix: "₽",
+  },
+  {
+    id: "add-chandelier",
+    categoryId: "additional",
+    name: "Мойка люстры",
+    unitLabel: "за штуку",
+    priceFrom: 900,
+    priceSuffix: "₽",
+  },
+  {
+    id: "add-fridge",
+    categoryId: "additional",
+    name: "Мойка холодильника",
+    unitLabel: "за штуку",
+    priceFrom: 1200,
+    priceSuffix: "₽",
+  },
+  {
+    id: "add-oven",
+    categoryId: "additional",
+    name: "Мойка духовки",
+    unitLabel: "за штуку",
+    priceFrom: 1100,
+    priceSuffix: "₽",
+  },
+  {
+    id: "add-bathroom",
+    categoryId: "additional",
+    name: "Уборка санузла",
+    unitLabel: "за помещение",
+    priceFrom: 1800,
+    priceSuffix: "₽",
+  },
+];
