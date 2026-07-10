@@ -1,3 +1,4 @@
+import { HeroBackgroundVideo } from "@/features/home/hero/HeroBackgroundVideo";
 import { HeroHeader } from "@/features/home/hero/HeroHeader";
 import { HeroOffer } from "@/features/home/hero/HeroOffer";
 import { HeroQuickForm } from "@/features/home/hero/HeroQuickForm";
@@ -13,18 +14,7 @@ export function HeroSection() {
           data-hero-shell
           className="relative isolate min-h-0 overflow-hidden rounded-[var(--radius-xl)] shadow-[var(--shadow-elevated)] sm:min-h-[580px] md:min-h-[640px] lg:min-h-[680px]"
         >
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/videos/hero-poster.jpg"
-            aria-hidden
-          >
-            <source src="/videos/hero.mp4" type="video/mp4" />
-          </video>
+          <HeroBackgroundVideo />
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/30" />
           <div

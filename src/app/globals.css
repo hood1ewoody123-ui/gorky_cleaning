@@ -103,4 +103,16 @@
     font-family: var(--font-sans);
     overflow-x: clip;
   }
+
+  .hero-background-video {
+    pointer-events: none;
+  }
+
+  .hero-background-video::-webkit-media-controls {
+    display: none !important;
+  }
+
+  .hero-background-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
 }
