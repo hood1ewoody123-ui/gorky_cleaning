@@ -40,9 +40,7 @@ export function MessengerButtons() {
               <Icon
                 className={cn(
                   "size-[18px] shrink-0",
-                  button.id === "vk" || button.variant === "solid"
-                    ? "text-white"
-                    : "text-primary",
+                  button.id === "vk" ? "text-white" : "text-primary",
                 )}
               />
             ) : null}
