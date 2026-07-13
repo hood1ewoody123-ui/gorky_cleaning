@@ -28,15 +28,15 @@ export default function HomePage() {
 
       <main className="flex flex-1 flex-col pb-24 md:pb-0">
         <HeroSection />
+        <DeferredServicesCatalogSection />
+        <DeferredCleaningCalculatorSection />
+        <DeferredWorkCasesSection />
         <TrustMetricsSection />
         <DeferredCleaningProcessSection />
         <DeferredWhatsIncludedSection />
-        <DeferredServicesCatalogSection />
-        <DeferredCleaningCalculatorSection />
         <CompanyStatsSection />
         <FounderSection />
         <WorkStagesSection />
-        <DeferredWorkCasesSection />
         <DeferredTrustDashboardSection />
         <FaqSection />
         <FinalCtaSection />

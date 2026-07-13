@@ -2,9 +2,12 @@
 
 import { useEffect, useRef } from "react";
 
-const HERO_VIDEO_SRC = "/videos/hero.mp4";
+const HERO_VIDEO_DESKTOP = "/videos/hero.mp4";
+const HERO_VIDEO_MOBILE = "/videos/hero-mobile.mp4";
+const HERO_POSTER_DESKTOP = "/videos/hero-poster.jpg";
+const HERO_POSTER_MOBILE = "/videos/hero-mobile-poster.jpg";
 
-export function HeroBackgroundVideo() {
+function useAutoplayVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -40,22 +43,51 @@ export function HeroBackgroundVideo() {
     };
   }, []);
 
+  return videoRef;
+}
+
+type HeroVideoProps = {
+  src: string;
+  poster: string;
+  className: string;
+};
+
+function HeroVideo({ src, poster, className }: HeroVideoProps) {
+  const videoRef = useAutoplayVideo();
+
   return (
     <video
       ref={videoRef}
-      className="hero-background-video absolute inset-0 h-full w-full object-cover"
+      className={className}
       autoPlay
       muted
       loop
       playsInline
       preload="auto"
-      poster="/videos/hero-poster.jpg"
+      poster={poster}
       disablePictureInPicture
       controls={false}
       controlsList="nodownload noplaybackrate noremoteplayback"
       aria-hidden
     >
-      <source src={HERO_VIDEO_SRC} type="video/mp4" />
+      <source src={src} type="video/mp4" />
     </video>
+  );
+}
+
+export function HeroBackgroundVideo() {
+  return (
+    <>
+      <HeroVideo
+        src={HERO_VIDEO_MOBILE}
+        poster={HERO_POSTER_MOBILE}
+        className="hero-background-video absolute inset-0 h-full w-full object-cover md:hidden"
+      />
+      <HeroVideo
+        src={HERO_VIDEO_DESKTOP}
+        poster={HERO_POSTER_DESKTOP}
+        className="hero-background-video absolute inset-0 hidden h-full w-full object-cover md:block"
+      />
+    </>
   );
 }

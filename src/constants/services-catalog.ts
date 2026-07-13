@@ -36,7 +36,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "apartments",
     name: "Поддерживающая уборка",
     unitLabel: "м²",
-    priceFrom: 95,
+    priceFrom: 85,
     priceSuffix: "₽/м²",
   },
   {
@@ -44,7 +44,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "apartments",
     name: "Генеральная уборка",
     unitLabel: "м²",
-    priceFrom: 160,
+    priceFrom: 145,
     priceSuffix: "₽/м²",
   },
   {
@@ -52,7 +52,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "apartments",
     name: "Уборка после ремонта",
     unitLabel: "м²",
-    priceFrom: 195,
+    priceFrom: 180,
     priceSuffix: "₽/м²",
   },
   {
@@ -60,7 +60,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "apartments",
     name: "Уборка перед заселением",
     unitLabel: "м²",
-    priceFrom: 180,
+    priceFrom: 165,
     priceSuffix: "₽/м²",
   },
   {
@@ -68,7 +68,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "apartments",
     name: "Уборка студии",
     unitLabel: "за объект",
-    priceFrom: 3900,
+    priceFrom: 3600,
     priceSuffix: "₽",
   },
   {
@@ -76,7 +76,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "apartments",
     name: "Уборка однокомнатной квартиры",
     unitLabel: "за объект",
-    priceFrom: 4900,
+    priceFrom: 4500,
     priceSuffix: "₽",
   },
   {
@@ -84,7 +84,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "apartments",
     name: "Уборка двухкомнатной квартиры",
     unitLabel: "за объект",
-    priceFrom: 6500,
+    priceFrom: 6000,
     priceSuffix: "₽",
   },
   {
@@ -92,7 +92,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "apartments",
     name: "Уборка трёхкомнатной квартиры",
     unitLabel: "за объект",
-    priceFrom: 8200,
+    priceFrom: 7500,
     priceSuffix: "₽",
   },
 
@@ -102,7 +102,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "houses",
     name: "Уборка частного дома",
     unitLabel: "м²",
-    priceFrom: 120,
+    priceFrom: 110,
     priceSuffix: "₽/м²",
   },
   {
@@ -110,7 +110,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "houses",
     name: "Генеральная уборка дома",
     unitLabel: "м²",
-    priceFrom: 175,
+    priceFrom: 160,
     priceSuffix: "₽/м²",
   },
   {
@@ -118,7 +118,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "houses",
     name: "Уборка коттеджа",
     unitLabel: "м²",
-    priceFrom: 145,
+    priceFrom: 135,
     priceSuffix: "₽/м²",
   },
   {
@@ -126,7 +126,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "houses",
     name: "Уборка после ремонта в доме",
     unitLabel: "м²",
-    priceFrom: 210,
+    priceFrom: 195,
     priceSuffix: "₽/м²",
   },
   {
@@ -134,7 +134,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "houses",
     name: "Уборка прилегающей территории",
     unitLabel: "м²",
-    priceFrom: 35,
+    priceFrom: 30,
     priceSuffix: "₽/м²",
   },
   {
@@ -142,7 +142,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "houses",
     name: "Уборка гаража",
     unitLabel: "м²",
-    priceFrom: 90,
+    priceFrom: 85,
     priceSuffix: "₽/м²",
   },
   {
@@ -150,7 +150,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "houses",
     name: "Уборка балкона и террасы",
     unitLabel: "м²",
-    priceFrom: 110,
+    priceFrom: 100,
     priceSuffix: "₽/м²",
   },
 
@@ -160,7 +160,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "offices",
     name: "Ежедневная уборка офиса",
     unitLabel: "м²",
-    priceFrom: 40,
+    priceFrom: 35,
     priceSuffix: "₽/м²",
   },
   {
@@ -168,7 +168,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "offices",
     name: "Генеральная уборка офиса",
     unitLabel: "м²",
-    priceFrom: 65,
+    priceFrom: 60,
     priceSuffix: "₽/м²",
   },
   {
@@ -176,7 +176,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "offices",
     name: "Уборка офиса после ремонта",
     unitLabel: "м²",
-    priceFrom: 85,
+    priceFrom: 80,
     priceSuffix: "₽/м²",
   },
   {
@@ -184,7 +184,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "offices",
     name: "Мойка окон в офисе",
     unitLabel: "м²",
-    priceFrom: 120,
+    priceFrom: 110,
     priceSuffix: "₽/м²",
   },
   {
@@ -192,7 +192,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "offices",
     name: "Уборка торгового зала",
     unitLabel: "м²",
-    priceFrom: 55,
+    priceFrom: 50,
     priceSuffix: "₽/м²",
   },
   {
@@ -200,7 +200,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "offices",
     name: "Уборка коворкинга",
     unitLabel: "м²",
-    priceFrom: 48,
+    priceFrom: 45,
     priceSuffix: "₽/м²",
   },
   {
@@ -208,7 +208,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "offices",
     name: "Уборка переговорной",
     unitLabel: "за помещение",
-    priceFrom: 1800,
+    priceFrom: 1650,
     priceSuffix: "₽",
   },
 
@@ -218,7 +218,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "premises",
     name: "Уборка складов",
     unitLabel: "м²",
-    priceFrom: 35,
+    priceFrom: 30,
     priceSuffix: "₽/м²",
   },
   {
@@ -226,7 +226,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "premises",
     name: "Клининг производственных помещений",
     unitLabel: "м²",
-    priceFrom: 45,
+    priceFrom: 40,
     priceSuffix: "₽/м²",
   },
   {
@@ -234,7 +234,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "premises",
     name: "Уборка медицинских кабинетов",
     unitLabel: "м²",
-    priceFrom: 90,
+    priceFrom: 85,
     priceSuffix: "₽/м²",
   },
   {
@@ -242,7 +242,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "premises",
     name: "Уборка ресторанов и кафе",
     unitLabel: "м²",
-    priceFrom: 75,
+    priceFrom: 70,
     priceSuffix: "₽/м²",
   },
   {
@@ -250,7 +250,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "premises",
     name: "Уборка салонов красоты",
     unitLabel: "м²",
-    priceFrom: 85,
+    priceFrom: 80,
     priceSuffix: "₽/м²",
   },
   {
@@ -258,7 +258,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "premises",
     name: "Уборка фитнес-клуба",
     unitLabel: "м²",
-    priceFrom: 70,
+    priceFrom: 65,
     priceSuffix: "₽/м²",
   },
   {
@@ -266,7 +266,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "premises",
     name: "Уборка учебных помещений",
     unitLabel: "м²",
-    priceFrom: 50,
+    priceFrom: 45,
     priceSuffix: "₽/м²",
   },
 
@@ -276,7 +276,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "special",
     name: "Уборка после затопления",
     unitLabel: "м²",
-    priceFrom: 450,
+    priceFrom: 415,
     priceSuffix: "₽/м²",
   },
   {
@@ -284,7 +284,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "special",
     name: "Уборка после пожара",
     unitLabel: "м²",
-    priceFrom: 520,
+    priceFrom: 480,
     priceSuffix: "₽/м²",
   },
   {
@@ -292,7 +292,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "special",
     name: "Уборка при переезде",
     unitLabel: "м²",
-    priceFrom: 170,
+    priceFrom: 155,
     priceSuffix: "₽/м²",
   },
   {
@@ -300,7 +300,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "special",
     name: "Дезинфекция помещений",
     unitLabel: "м²",
-    priceFrom: 55,
+    priceFrom: 50,
     priceSuffix: "₽/м²",
   },
   {
@@ -308,7 +308,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "special",
     name: "Антибактериальная обработка",
     unitLabel: "м²",
-    priceFrom: 60,
+    priceFrom: 55,
     priceSuffix: "₽/м²",
   },
   {
@@ -316,7 +316,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "special",
     name: "Удаление строительной пыли",
     unitLabel: "м²",
-    priceFrom: 85,
+    priceFrom: 80,
     priceSuffix: "₽/м²",
   },
   {
@@ -324,7 +324,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "special",
     name: "Удаление запахов",
     unitLabel: "за объект",
-    priceFrom: 3500,
+    priceFrom: 3200,
     priceSuffix: "₽",
   },
 
@@ -334,7 +334,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "dry-cleaning",
     name: "Химчистка дивана",
     unitLabel: "за предмет",
-    priceFrom: 2800,
+    priceFrom: 2600,
     priceSuffix: "₽",
   },
   {
@@ -342,7 +342,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "dry-cleaning",
     name: "Химчистка кресла",
     unitLabel: "за предмет",
-    priceFrom: 1800,
+    priceFrom: 1650,
     priceSuffix: "₽",
   },
   {
@@ -350,7 +350,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "dry-cleaning",
     name: "Химчистка матраса",
     unitLabel: "за предмет",
-    priceFrom: 2200,
+    priceFrom: 2000,
     priceSuffix: "₽",
   },
   {
@@ -358,7 +358,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "dry-cleaning",
     name: "Химчистка ковра",
     unitLabel: "м²",
-    priceFrom: 380,
+    priceFrom: 350,
     priceSuffix: "₽/м²",
   },
   {
@@ -366,7 +366,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "dry-cleaning",
     name: "Химчистка штор",
     unitLabel: "м²",
-    priceFrom: 350,
+    priceFrom: 320,
     priceSuffix: "₽/м²",
   },
   {
@@ -374,7 +374,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "dry-cleaning",
     name: "Химчистка салона автомобиля",
     unitLabel: "за объект",
-    priceFrom: 4500,
+    priceFrom: 4100,
     priceSuffix: "₽",
   },
   {
@@ -382,7 +382,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "dry-cleaning",
     name: "Химчистка офисного кресла",
     unitLabel: "за предмет",
-    priceFrom: 1200,
+    priceFrom: 1100,
     priceSuffix: "₽",
   },
 
@@ -392,7 +392,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Мойка окон",
     unitLabel: "м²",
-    priceFrom: 450,
+    priceFrom: 415,
     priceSuffix: "₽/м²",
   },
   {
@@ -400,7 +400,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Мойка окон после ремонта",
     unitLabel: "м²",
-    priceFrom: 550,
+    priceFrom: 505,
     priceSuffix: "₽/м²",
   },
   {
@@ -408,7 +408,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Глажка",
     unitLabel: "30 минут",
-    priceFrom: 500,
+    priceFrom: 450,
     priceSuffix: "₽",
   },
   {
@@ -416,7 +416,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Уборка кухни",
     unitLabel: "от 2 часов",
-    priceFrom: 5500,
+    priceFrom: 5100,
     priceSuffix: "₽",
   },
   {
@@ -424,7 +424,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Мытьё посуды",
     unitLabel: "30 минут",
-    priceFrom: 450,
+    priceFrom: 400,
     priceSuffix: "₽",
   },
   {
@@ -432,7 +432,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Мойка люстры",
     unitLabel: "за штуку",
-    priceFrom: 900,
+    priceFrom: 850,
     priceSuffix: "₽",
   },
   {
@@ -440,7 +440,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Мойка холодильника",
     unitLabel: "за штуку",
-    priceFrom: 1200,
+    priceFrom: 1100,
     priceSuffix: "₽",
   },
   {
@@ -448,7 +448,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Мойка духовки",
     unitLabel: "за штуку",
-    priceFrom: 1100,
+    priceFrom: 1000,
     priceSuffix: "₽",
   },
   {
@@ -456,7 +456,7 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     categoryId: "additional",
     name: "Уборка санузла",
     unitLabel: "за помещение",
-    priceFrom: 1800,
+    priceFrom: 1650,
     priceSuffix: "₽",
   },
 ];

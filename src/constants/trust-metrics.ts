@@ -1,5 +1,5 @@
 export const MESSENGER_LINKS = {
-  whatsapp: "https://wa.me/79101243165",
+  vk: "https://vk.com/prtkir4",
   telegram: "https://t.me/prtcreator",
   max: "https://max.ru/gorkycleaning",
 } as const;
@@ -17,7 +17,7 @@ export type TrustMetric = {
 export const TRUST_METRICS: TrustMetric[] = [
   {
     id: "orders",
-    endValue: 2500,
+    endValue: 700,
     suffix: "+",
     label: "выполненных заказов",
   },
@@ -46,9 +46,9 @@ export type MessengerButtonVariant = "solid" | "soft" | "outline";
 
 export const MESSENGER_BUTTONS = [
   {
-    id: "whatsapp",
-    label: "WhatsApp",
-    href: MESSENGER_LINKS.whatsapp,
+    id: "vk",
+    label: "ВКонтакте",
+    href: MESSENGER_LINKS.vk,
     variant: "solid" satisfies MessengerButtonVariant,
   },
   {

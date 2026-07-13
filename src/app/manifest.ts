@@ -15,6 +15,11 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "ru",
     icons: [
       {
+        src: "/icon.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+      {
         src: SEO_ASSETS.favicon,
         sizes: "any",
         type: "image/svg+xml",

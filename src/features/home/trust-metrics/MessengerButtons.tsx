@@ -18,8 +18,12 @@ export function MessengerButtons() {
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
       {MESSENGER_BUTTONS.map((button) => {
-        const hasIcon = button.id === "whatsapp" || button.id === "telegram";
+        const hasIcon = button.id === "vk" || button.id === "telegram";
         const Icon = hasIcon ? getMessengerIcon(button.id) : null;
+        const brandStyles =
+          button.id === "vk"
+            ? "bg-[#0077FF] text-white hover:bg-[#0066DD] shadow-[var(--shadow-card)]"
+            : null;
 
         return (
           <a
@@ -29,15 +33,15 @@ export function MessengerButtons() {
             rel="noopener noreferrer"
             className={cn(
               "inline-flex h-10 items-center justify-center gap-2.5 rounded-[var(--radius-md)] px-4 text-sm font-medium transition-colors",
-              VARIANT_STYLES[button.variant],
+              brandStyles ?? VARIANT_STYLES[button.variant],
             )}
           >
             {Icon ? (
               <Icon
                 className={cn(
                   "size-[18px] shrink-0",
-                  button.variant === "solid"
-                    ? "text-primary-foreground"
+                  button.id === "vk" || button.variant === "solid"
+                    ? "text-white"
                     : "text-primary",
                 )}
               />

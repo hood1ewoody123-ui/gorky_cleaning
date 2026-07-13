@@ -25,7 +25,7 @@ export const FOOTER_CONTACT = {
 } as const;
 
 export const FOOTER_MESSENGERS = [
-  { label: "WhatsApp", href: MESSENGER_LINKS.whatsapp },
+  { label: "ВКонтакте", href: MESSENGER_LINKS.vk },
   { label: "Telegram", href: MESSENGER_LINKS.telegram },
   { label: "MAX", href: MESSENGER_LINKS.max },
 ] as const;

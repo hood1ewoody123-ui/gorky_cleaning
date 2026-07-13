@@ -1,12 +1,12 @@
 import type { LucideIcon } from "lucide-react";
-import { BadgeCheck, CalendarDays, CreditCard, Sparkles } from "lucide-react";
+import { BadgeCheck, CalendarDays, Sparkles, Zap } from "lucide-react";
 
 export const TRUST_DASHBOARD_HEADING =
   "Рейтинги, отзывы и условия работы — всё прозрачно, чтобы вы могли принять решение без сомнений.";
 
 export const OVERALL_TRUST_RATING = {
   rating: 4.9,
-  reviewsCount: 220,
+  reviewsCount: 65,
   label: "Средняя оценка клиентов",
 } as const;
 
@@ -33,9 +33,9 @@ export const TRUST_GUARANTEES: TrustGuarantee[] = [
     icon: BadgeCheck,
   },
   {
-    id: "pay-after",
-    label: "Оплата после приёмки результата",
-    icon: CreditCard,
+    id: "fast-response",
+    label: "Выезд в день обращения",
+    icon: Zap,
   },
   {
     id: "equipment",

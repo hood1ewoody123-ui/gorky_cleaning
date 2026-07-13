@@ -6,7 +6,7 @@ import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { CONTACT } from "@/constants/home";
 import { MESSENGER_LINKS } from "@/constants/trust-metrics";
-import { TelegramIcon } from "@/shared/icons/MessengerIcons";
+import { TelegramIcon, VkIcon } from "@/shared/icons/MessengerIcons";
 import { cn } from "@/lib/utils";
 
 type FloatingAction = {
@@ -43,6 +43,13 @@ export function FloatingContactWidget() {
       className: "bg-primary text-primary-foreground hover:bg-primary/90",
     },
     {
+      id: "vk",
+      label: "ВКонтакте",
+      href: MESSENGER_LINKS.vk,
+      icon: <VkIcon className="size-5" aria-hidden />,
+      className: "bg-[#0077FF] text-white hover:bg-[#0066DD]",
+    },
+    {
       id: "telegram",
       label: "Telegram",
       href: MESSENGER_LINKS.telegram,
@@ -69,7 +76,7 @@ export function FloatingContactWidget() {
         className={cn(
           "flex flex-col items-center gap-3 transition-all duration-300",
           expanded
-            ? "max-h-48 opacity-100"
+            ? "max-h-64 opacity-100"
             : "pointer-events-none max-h-0 overflow-hidden opacity-0",
         )}
       >

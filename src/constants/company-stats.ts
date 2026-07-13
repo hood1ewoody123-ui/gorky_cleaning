@@ -12,13 +12,13 @@ export type CompanyStatsSegment =
 export const COMPANY_STATS_PARAGRAPHS: CompanyStatsSegment[][] = [
   [
     { type: "text", value: "Мы — команда из " },
-    { type: "stat", id: "employees", endValue: 12 },
+    { type: "stat", id: "employees", endValue: 8 },
     {
       type: "text",
       value:
         " профессионалов, которые каждый день делают город чище — от уютных квартир до больших офисов. За три года работы мы привели в порядок уже более ",
     },
-    { type: "stat", id: "area", endValue: 160_000, suffix: " м²" },
+    { type: "stat", id: "area", endValue: 45_000, suffix: " м²" },
     {
       type: "text",
       value: " и знаем, как добиться результата, который чувствуется с порога.",
