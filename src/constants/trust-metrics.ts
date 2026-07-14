@@ -1,7 +1,7 @@
 export const MESSENGER_LINKS = {
   vk: "https://vk.com/prtkir4",
   telegram: "https://t.me/prtcreator",
-  max: "https://max.ru/gorkycleaning",
+  max: "https://max.ru/u/f9LHodD0cOIz-PjjWvOqtS7wb-pFqJhGMKr2ZPI-6ty9opoYWWwQClvtFlk",
 } as const;
 
 export type TrustMetric = {
