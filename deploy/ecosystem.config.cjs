@@ -14,6 +14,12 @@ module.exports = {
         NODE_ENV: "production",
         PORT: "3002",
         ...productionEnv,
+        NODE_OPTIONS: [
+          productionEnv.NODE_OPTIONS,
+          "--dns-result-order=ipv4first",
+        ]
+          .filter(Boolean)
+          .join(" "),
       },
       max_memory_restart: "512M",
       autorestart: true,

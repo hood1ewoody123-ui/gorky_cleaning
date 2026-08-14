@@ -1,9 +1,10 @@
 import { getEnv } from "@/lib/env";
 import { formatTelegramLeadMessage } from "@/lib/leads/formatLeadMessage";
+import { telegramFetch } from "@/lib/leads/telegramFetch";
 import type { LeadPayload } from "@/types/lead";
 
 export async function sendTelegramLead(payload: LeadPayload): Promise<boolean> {
-  const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = getEnv();
+  const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, TELEGRAM_PROXY_URL } = getEnv();
 
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
     console.error(
@@ -13,8 +14,8 @@ export async function sendTelegramLead(payload: LeadPayload): Promise<boolean> {
   }
 
   try {
-    const response = await fetch(
-      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+    const response = await telegramFetch(
+      `/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -23,8 +24,8 @@ export async function sendTelegramLead(payload: LeadPayload): Promise<boolean> {
           text: formatTelegramLeadMessage(payload),
           parse_mode: "HTML",
         }),
-        signal: AbortSignal.timeout(15_000),
       },
+      TELEGRAM_PROXY_URL,
     );
 
     if (!response.ok) {
