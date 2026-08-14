@@ -4,7 +4,13 @@ import { telegramFetch } from "@/lib/leads/telegramFetch";
 import type { LeadPayload } from "@/types/lead";
 
 export async function sendTelegramLead(payload: LeadPayload): Promise<boolean> {
-  const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, TELEGRAM_PROXY_URL } = getEnv();
+  const {
+    TELEGRAM_BOT_TOKEN,
+    TELEGRAM_CHAT_ID,
+    TELEGRAM_API_BASE,
+    TELEGRAM_PROXY_URL,
+    TELEGRAM_PROXY_SECRET,
+  } = getEnv();
 
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
     console.error(
@@ -25,7 +31,11 @@ export async function sendTelegramLead(payload: LeadPayload): Promise<boolean> {
           parse_mode: "HTML",
         }),
       },
-      TELEGRAM_PROXY_URL,
+      {
+        apiBase: TELEGRAM_API_BASE,
+        proxyUrl: TELEGRAM_PROXY_URL,
+        proxySecret: TELEGRAM_PROXY_SECRET,
+      },
     );
 
     if (!response.ok) {

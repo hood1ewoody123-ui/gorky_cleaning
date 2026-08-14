@@ -1,8 +1,14 @@
-const TELEGRAM_API_BASE = "https://api.telegram.org";
+const DEFAULT_TELEGRAM_API_BASE = "https://api.telegram.org";
 const REQUEST_TIMEOUT_MS = 20_000;
 const MAX_ATTEMPTS = 3;
 
 type TelegramFetchInit = Omit<RequestInit, "signal">;
+
+export type TelegramFetchOptions = {
+  apiBase?: string;
+  proxyUrl?: string;
+  proxySecret?: string;
+};
 
 function sleep(ms: number) {
   return new Promise((resolve) => {
@@ -37,19 +43,31 @@ async function createTelegramDispatcher(proxyUrl?: string) {
   return new ProxyAgent(proxyUrl);
 }
 
+function buildTelegramUrl(apiBase: string, path: string) {
+  return `${apiBase.replace(/\/$/, "")}${path}`;
+}
+
 export async function telegramFetch(
   path: string,
   init: TelegramFetchInit,
-  proxyUrl?: string,
+  options: TelegramFetchOptions = {},
 ) {
-  const url = `${TELEGRAM_API_BASE}${path}`;
-  const dispatcher = await createTelegramDispatcher(proxyUrl);
+  const apiBase = options.apiBase?.trim() || DEFAULT_TELEGRAM_API_BASE;
+  const url = buildTelegramUrl(apiBase, path);
+  const dispatcher = await createTelegramDispatcher(options.proxyUrl);
+  const headers = new Headers(init.headers);
+
+  if (options.proxySecret) {
+    headers.set("Authorization", `Bearer ${options.proxySecret}`);
+  }
+
   let lastError: unknown;
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
     try {
       return await fetch(url, {
         ...init,
+        headers,
         ...(dispatcher ? { dispatcher } : {}),
         signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
       });
