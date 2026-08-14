@@ -1,4 +1,8 @@
 /** PM2: pm2 start deploy/ecosystem.config.cjs */
+const { loadEnvFile } = require("./load-env-file.cjs");
+
+const productionEnv = loadEnvFile(".env.production");
+
 module.exports = {
   apps: [
     {
@@ -9,6 +13,7 @@ module.exports = {
       env: {
         NODE_ENV: "production",
         PORT: "3002",
+        ...productionEnv,
       },
       max_memory_restart: "512M",
       autorestart: true,

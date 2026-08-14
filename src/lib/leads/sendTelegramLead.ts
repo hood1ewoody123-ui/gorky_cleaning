@@ -6,7 +6,9 @@ export async function sendTelegramLead(payload: LeadPayload): Promise<boolean> {
   const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = getEnv();
 
   if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-    console.error("[lead] Telegram credentials are not configured");
+    console.error(
+      "[lead] Telegram credentials are not configured. Check TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in .env.production and PM2 env.",
+    );
     return false;
   }
 
