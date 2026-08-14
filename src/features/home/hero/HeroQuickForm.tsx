@@ -27,7 +27,9 @@ import {
   type HeroQuickFormValues,
 } from "@/features/home/hero/heroQuickFormSchema";
 import { formatRuPhoneInput, RU_PHONE_EMPTY } from "@/lib/formatPhone";
+import { leadConsentDefaultValue } from "@/lib/leads/consentSchema";
 import { submitLead } from "@/lib/leads/submitLead";
+import { LeadConsentField } from "@/shared/forms/LeadConsentField";
 import { cn } from "@/lib/utils";
 
 type HeroQuickFormProps = {
@@ -60,6 +62,7 @@ export function HeroQuickForm({ className }: HeroQuickFormProps) {
       area: "",
       cleaningType: "",
       phone: RU_PHONE_EMPTY,
+      consentAccepted: leadConsentDefaultValue,
     },
   });
 
@@ -277,6 +280,13 @@ export function HeroQuickForm({ className }: HeroQuickFormProps) {
             {submitError ? (
               <p className="text-[0.6875rem] text-red-200">{submitError}</p>
             ) : null}
+
+            <LeadConsentField
+              id="hero-consent"
+              register={register}
+              error={errors.consentAccepted}
+              variant="hero"
+            />
 
             <Button
               type="submit"

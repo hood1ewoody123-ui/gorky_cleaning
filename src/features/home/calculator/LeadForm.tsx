@@ -13,6 +13,8 @@ import {
   type CalculatorLeadValues,
 } from "@/features/home/calculator/calculatorLeadSchema";
 import { formatRuPhoneInput, RU_PHONE_EMPTY } from "@/lib/formatPhone";
+import { leadConsentDefaultValue } from "@/lib/leads/consentSchema";
+import { LeadConsentField } from "@/shared/forms/LeadConsentField";
 import { cn } from "@/lib/utils";
 
 type LeadFormProps = {
@@ -39,6 +41,7 @@ export function LeadForm({ onSubmit, className }: LeadFormProps) {
       phone: RU_PHONE_EMPTY,
       email: "",
       comment: "",
+      consentAccepted: leadConsentDefaultValue,
     },
   });
 
@@ -49,7 +52,13 @@ export function LeadForm({ onSubmit, className }: LeadFormProps) {
     try {
       await onSubmit(values);
       setSubmitState("success");
-      reset({ name: "", phone: RU_PHONE_EMPTY, email: "", comment: "" });
+      reset({
+        name: "",
+        phone: RU_PHONE_EMPTY,
+        email: "",
+        comment: "",
+        consentAccepted: leadConsentDefaultValue,
+      });
     } catch {
       setSubmitState("error");
       setSubmitError("Не удалось отправить заявку. Попробуйте ещё раз.");
@@ -150,6 +159,12 @@ export function LeadForm({ onSubmit, className }: LeadFormProps) {
       {submitError ? (
         <p className="text-sm text-destructive">{submitError}</p>
       ) : null}
+
+      <LeadConsentField
+        id="calc-consent"
+        register={register}
+        error={errors.consentAccepted}
+      />
 
       <Button
         type="submit"

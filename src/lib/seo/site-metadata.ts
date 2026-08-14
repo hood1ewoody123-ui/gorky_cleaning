@@ -91,3 +91,38 @@ export function createHomeMetadata(): Metadata {
     },
   };
 }
+
+export function createLegalPageMetadata({
+  title,
+  description,
+  path,
+}: {
+  title: string;
+  description: string;
+  path: string;
+}): Metadata {
+  const canonical = getAbsoluteUrl(path);
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: path,
+    },
+    openGraph: {
+      ...defaultOpenGraph,
+      url: canonical,
+      title: `${title} | ${SITE.name}`,
+      description,
+    },
+    twitter: {
+      ...defaultTwitter,
+      title: `${title} | ${SITE.name}`,
+      description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}

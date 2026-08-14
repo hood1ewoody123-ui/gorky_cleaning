@@ -33,8 +33,10 @@ import {
   type ServiceLeadValues,
 } from "@/features/leads/leadFormSchemas";
 import { formatRuPhoneInput, RU_PHONE_EMPTY } from "@/lib/formatPhone";
+import { leadConsentDefaultValue } from "@/lib/leads/consentSchema";
 import { normalizeLeadEmail } from "@/lib/leads/normalizeLeadEmail";
 import { submitLead } from "@/lib/leads/submitLead";
+import { LeadConsentField } from "@/shared/forms/LeadConsentField";
 import { cn } from "@/lib/utils";
 
 const LEAD_INPUT_CLASS = "h-10 rounded-[var(--radius-xs)] px-3 text-sm";
@@ -204,6 +206,7 @@ function MainLeadPopupForm({
       area: "",
       cleaningType: "",
       phone: RU_PHONE_EMPTY,
+      consentAccepted: leadConsentDefaultValue,
     },
   });
 
@@ -232,6 +235,7 @@ function MainLeadPopupForm({
         area: "",
         cleaningType: "",
         phone: RU_PHONE_EMPTY,
+        consentAccepted: leadConsentDefaultValue,
       });
     } catch {
       setSubmitState("error");
@@ -363,6 +367,12 @@ function MainLeadPopupForm({
         <p className="text-sm text-destructive">{submitError}</p>
       ) : null}
 
+      <LeadConsentField
+        id="lead-main-consent"
+        register={register}
+        error={errors.consentAccepted}
+      />
+
       <Button
         type="submit"
         className={LEAD_SUBMIT_CLASS}
@@ -401,6 +411,7 @@ function ServiceLeadPopupForm({
       phone: RU_PHONE_EMPTY,
       email: "",
       comment: "",
+      consentAccepted: leadConsentDefaultValue,
     },
   });
 
@@ -421,7 +432,13 @@ function ServiceLeadPopupForm({
         metadata,
       });
       setSubmitState("success");
-      reset({ name: "", phone: RU_PHONE_EMPTY, email: "", comment: "" });
+      reset({
+        name: "",
+        phone: RU_PHONE_EMPTY,
+        email: "",
+        comment: "",
+        consentAccepted: leadConsentDefaultValue,
+      });
     } catch {
       setSubmitState("error");
       setSubmitError("Не удалось отправить заявку. Попробуйте ещё раз.");
@@ -507,6 +524,12 @@ function ServiceLeadPopupForm({
         <p className="text-sm text-destructive">{submitError}</p>
       ) : null}
 
+      <LeadConsentField
+        id="lead-service-consent"
+        register={register}
+        error={errors.consentAccepted}
+      />
+
       <Button
         type="submit"
         className={LEAD_SUBMIT_CLASS}
@@ -547,6 +570,7 @@ function SimpleLeadPopupForm({
       name: "",
       phone: RU_PHONE_EMPTY,
       email: "",
+      consentAccepted: leadConsentDefaultValue,
     },
   });
 
@@ -569,7 +593,12 @@ function SimpleLeadPopupForm({
         },
       });
       setSubmitState("success");
-      reset({ name: "", phone: RU_PHONE_EMPTY, email: "" });
+      reset({
+        name: "",
+        phone: RU_PHONE_EMPTY,
+        email: "",
+        consentAccepted: leadConsentDefaultValue,
+      });
     } catch {
       setSubmitState("error");
       setSubmitError("Не удалось отправить заявку. Попробуйте ещё раз.");
@@ -636,6 +665,12 @@ function SimpleLeadPopupForm({
       {submitError ? (
         <p className="text-sm text-destructive">{submitError}</p>
       ) : null}
+
+      <LeadConsentField
+        id={`lead-${variant}-consent`}
+        register={register}
+        error={errors.consentAccepted}
+      />
 
       <Button
         type="submit"
