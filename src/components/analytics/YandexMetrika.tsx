@@ -2,13 +2,16 @@
 
 import Script from "next/script";
 
+import { useCookieConsent } from "@/components/legal/CookieConsentProvider";
 import {
   YANDEX_METRIKA_ENABLED,
   YANDEX_METRIKA_ID,
 } from "@/constants/analytics";
 
 export function YandexMetrika() {
-  if (!YANDEX_METRIKA_ENABLED) {
+  const { isReady, analyticsAllowed } = useCookieConsent();
+
+  if (!YANDEX_METRIKA_ENABLED || !isReady || !analyticsAllowed) {
     return null;
   }
 

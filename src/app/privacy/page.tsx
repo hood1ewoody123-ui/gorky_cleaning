@@ -9,7 +9,7 @@ import { SiteFooter } from "@/shared/footer/SiteFooter";
 export const metadata: Metadata = createLegalPageMetadata({
   title: "Политика конфиденциальности",
   description:
-    "Политика обработки персональных данных компании Горький Клининг: цели, сроки хранения, права пользователей и использование cookies.",
+    "Политика обработки персональных данных: категории ПДн, цели, cookie, трансграничная передача и права пользователей.",
   path: LEGAL_ROUTES.privacy,
 });
 

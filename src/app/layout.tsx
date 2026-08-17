@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { YandexMetrika } from "@/components/analytics/YandexMetrika";
 import { YandexScrollTracker } from "@/components/analytics/YandexScrollTracker";
+import { CookieConsentBanner } from "@/components/legal/CookieConsentBanner";
+import { CookieConsentProvider } from "@/components/legal/CookieConsentProvider";
 import { SiteChromeProvider } from "@/features/site-chrome/SiteChromeProvider";
 import { createRootMetadata } from "@/lib/seo/site-metadata";
 import { cn } from "@/lib/utils";
@@ -27,10 +29,13 @@ export default function RootLayout({
     <html lang="ru" className={cn("h-full", inter.variable)}>
       <body className="min-h-full flex flex-col font-sans">
         <AppProviders>
-          <SiteChromeProvider>{children}</SiteChromeProvider>
+          <CookieConsentProvider>
+            <SiteChromeProvider>{children}</SiteChromeProvider>
+            <CookieConsentBanner />
+            <YandexMetrika />
+            <YandexScrollTracker />
+          </CookieConsentProvider>
         </AppProviders>
-        <YandexMetrika />
-        <YandexScrollTracker />
       </body>
     </html>
   );

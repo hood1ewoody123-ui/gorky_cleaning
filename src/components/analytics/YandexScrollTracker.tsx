@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
+import { useCookieConsent } from "@/components/legal/CookieConsentProvider";
 import { YANDEX_METRIKA_GOALS } from "@/constants/analytics";
 import { trackScrollDepth } from "@/lib/analytics/yandexMetrika";
 
@@ -13,9 +14,14 @@ const SCROLL_MILESTONES = [
 ] as const;
 
 export function YandexScrollTracker() {
+  const { analyticsAllowed } = useCookieConsent();
   const reachedRef = useRef<Set<number>>(new Set());
 
   useEffect(() => {
+    if (!analyticsAllowed) {
+      return;
+    }
+
     const updateScrollDepth = () => {
       const scrollHeight =
         document.documentElement.scrollHeight - window.innerHeight;
@@ -43,7 +49,7 @@ export function YandexScrollTracker() {
     return () => {
       window.removeEventListener("scroll", updateScrollDepth);
     };
-  }, []);
+  }, [analyticsAllowed]);
 
   return null;
 }

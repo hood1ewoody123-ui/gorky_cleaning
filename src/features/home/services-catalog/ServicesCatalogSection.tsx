@@ -4,6 +4,7 @@ import {
 } from "@/constants/services-catalog";
 import { ServicesCatalogInteractive } from "@/features/home/services-catalog/ServicesCatalogInteractive";
 import { SectionIntro } from "@/shared/SectionIntro";
+import { LegalPriceDisclaimer } from "@/shared/legal/LegalPriceDisclaimer";
 
 export function ServicesCatalogSection() {
   return (
@@ -18,6 +19,8 @@ export function ServicesCatalogSection() {
           title={SERVICES_CATALOG_HEADING}
           description={SERVICES_CATALOG_DESCRIPTION}
         />
+
+        <LegalPriceDisclaimer />
 
         <ServicesCatalogInteractive />
       </div>

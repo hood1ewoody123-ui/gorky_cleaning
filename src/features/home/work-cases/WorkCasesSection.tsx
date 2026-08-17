@@ -5,6 +5,7 @@ import {
 } from "@/constants/work-cases";
 import { WorkCaseCard } from "@/features/home/work-cases/WorkCaseCard";
 import { SectionIntro } from "@/shared/SectionIntro";
+import { LegalPriceDisclaimer } from "@/shared/legal/LegalPriceDisclaimer";
 
 export function WorkCasesSection() {
   return (
@@ -19,6 +20,8 @@ export function WorkCasesSection() {
           title={WORK_CASES_HEADING}
           description={WORK_CASES_DESCRIPTION}
         />
+
+        <LegalPriceDisclaimer />
 
         <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {WORK_CASES.map((workCase) => (

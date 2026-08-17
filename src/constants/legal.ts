@@ -22,7 +22,8 @@ export const LEGAL_ENTITY = {
   analyticsProvider: "Яндекс.Метрика",
   analyticsId: "110396882",
   leadDelivery: "Telegram",
-  documentsUpdatedAt: "14 августа 2026 г.",
+  telegramProxyProvider: "Cloudflare Workers",
+  documentsUpdatedAt: "17 августа 2026 г.",
 } as const;
 
 export const LEGAL_ROUTES = {

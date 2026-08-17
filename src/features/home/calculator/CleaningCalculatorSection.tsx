@@ -4,6 +4,7 @@ import {
 } from "@/constants/cleaning-calculator";
 import { CleaningCalculator } from "@/features/home/calculator/CleaningCalculator";
 import { SectionIntro } from "@/shared/SectionIntro";
+import { LegalPriceDisclaimer } from "@/shared/legal/LegalPriceDisclaimer";
 
 export function CleaningCalculatorSection() {
   return (
@@ -18,6 +19,8 @@ export function CleaningCalculatorSection() {
           title={CALCULATOR_HEADING}
           description={CALCULATOR_DESCRIPTION}
         />
+
+        <LegalPriceDisclaimer />
 
         <CleaningCalculator />
       </div>

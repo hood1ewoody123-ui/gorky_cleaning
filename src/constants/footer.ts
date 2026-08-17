@@ -1,4 +1,5 @@
 import { CONTACT } from "@/constants/home";
+import { LEGAL_DISCLAIMERS } from "@/constants/legal-disclaimers";
 import { MESSENGER_LINKS } from "@/constants/trust-metrics";
 import { SITE } from "@/constants/site";
 
@@ -32,5 +33,7 @@ export const FOOTER_MESSENGERS = [
 
 export const FOOTER_TAGLINE =
   "Профессиональный клининг в Нижнем Новгороде — уборка квартир, домов, офисов и коммерческих помещений.";
+
+export const FOOTER_LEGAL_DISCLAIMER = LEGAL_DISCLAIMERS.notPublicOffer;
 
 export const FOOTER_COPYRIGHT = `© ${new Date().getFullYear()} ${SITE.name}. Все права защищены.`;

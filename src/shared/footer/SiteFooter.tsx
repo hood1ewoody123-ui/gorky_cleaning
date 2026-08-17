@@ -5,6 +5,7 @@ import {
   FOOTER_COMPANY_LINKS,
   FOOTER_CONTACT,
   FOOTER_COPYRIGHT,
+  FOOTER_LEGAL_DISCLAIMER,
   FOOTER_LEGAL_LINKS,
   FOOTER_MESSENGERS,
   FOOTER_TAGLINE,
@@ -116,22 +117,27 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 border-t border-foreground/8 pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-caption text-muted-foreground">
-            {FOOTER_COPYRIGHT}
+        <div className="flex flex-col gap-4 border-t border-foreground/8 pt-8">
+          <p className="max-w-4xl text-caption leading-relaxed text-muted-foreground">
+            {FOOTER_LEGAL_DISCLAIMER}
           </p>
-          <ul className="flex flex-wrap gap-4">
-            {FOOTER_LEGAL_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-caption text-muted-foreground transition-colors hover:text-primary"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p className="text-caption text-muted-foreground">
+              {FOOTER_COPYRIGHT}
+            </p>
+            <ul className="flex flex-wrap gap-4">
+              {FOOTER_LEGAL_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-caption text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

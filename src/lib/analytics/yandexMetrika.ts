@@ -2,11 +2,23 @@ import {
   YANDEX_METRIKA_ENABLED,
   YANDEX_METRIKA_ID,
 } from "@/constants/analytics";
+import {
+  hasAnalyticsConsent,
+  readCookieConsent,
+} from "@/lib/cookie-consent/cookieConsent";
 
 type MetrikaParams = Record<string, string | number | boolean | undefined>;
 
+function canTrackAnalytics() {
+  return (
+    YANDEX_METRIKA_ENABLED &&
+    typeof window !== "undefined" &&
+    hasAnalyticsConsent(readCookieConsent())
+  );
+}
+
 function callYm(method: "reachGoal" | "params", ...args: unknown[]) {
-  if (!YANDEX_METRIKA_ENABLED || typeof window === "undefined") {
+  if (!canTrackAnalytics()) {
     return;
   }
 
