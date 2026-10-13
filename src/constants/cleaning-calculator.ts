@@ -1,7 +1,15 @@
 export type ObjectTypeId = "apartment" | "house" | "office" | "commercial";
 
 export type CleaningTypeId =
-  "maintenance" | "general" | "after-renovation" | "regular";
+  "maintenance" | "general" | "after-renovation" | "regular" | "snow-removal";
+
+export const SNOW_REMOVAL_CLEANING_TYPE_ID = "snow-removal" as const;
+
+export function isSnowRemovalCleaningType(
+  cleaningType: CleaningTypeId,
+): boolean {
+  return cleaningType === SNOW_REMOVAL_CLEANING_TYPE_ID;
+}
 
 export type RoomCount = 1 | 2 | 3 | 4 | 5;
 
@@ -50,6 +58,11 @@ export const CLEANING_TYPE_OPTIONS: Array<{
     shortLabel: "После ремонта",
   },
   { id: "regular", label: "Регулярная", shortLabel: "Регулярная" },
+  {
+    id: "snow-removal",
+    label: "Чистка снега",
+    shortLabel: "Снег",
+  },
 ];
 
 export const ROOM_AREA_ESTIMATE: Record<RoomCount, number> = {
@@ -60,6 +73,26 @@ export const ROOM_AREA_ESTIMATE: Record<RoomCount, number> = {
   5: 115,
 };
 
+/** Ориентир площади участка для расчёта чистки снега (средняя цена за м²). */
+export const SNOW_TERRITORY_AREA_ESTIMATE: Record<RoomCount, number> = {
+  1: 50,
+  2: 100,
+  3: 150,
+  4: 200,
+  5: 250,
+};
+
+export const SNOW_TERRITORY_SIZE_OPTIONS: Array<{
+  value: RoomCount;
+  label: string;
+}> = [
+  { value: 1, label: "до 50 м²" },
+  { value: 2, label: "до 100 м²" },
+  { value: 3, label: "до 150 м²" },
+  { value: 4, label: "до 200 м²" },
+  { value: 5, label: "200+ м²" },
+];
+
 export const CLEANING_RATES: Record<
   ObjectTypeId,
   Record<CleaningTypeId, number>
@@ -69,24 +102,28 @@ export const CLEANING_RATES: Record<
     general: 145,
     "after-renovation": 180,
     regular: 80,
+    "snow-removal": 55,
   },
   house: {
     maintenance: 110,
     general: 160,
     "after-renovation": 195,
     regular: 95,
+    "snow-removal": 50,
   },
   office: {
     maintenance: 35,
     general: 60,
     "after-renovation": 80,
     regular: 35,
+    "snow-removal": 45,
   },
   commercial: {
     maintenance: 50,
     general: 70,
     "after-renovation": 85,
     regular: 45,
+    "snow-removal": 40,
   },
 };
 
@@ -96,6 +133,16 @@ export const MIN_ORDER_AMOUNT: Record<ObjectTypeId, number> = {
   office: 2800,
   commercial: 3900,
 };
+
+export const SNOW_MIN_ORDER_AMOUNT: Record<ObjectTypeId, number> = {
+  apartment: 2500,
+  house: 3500,
+  office: 3000,
+  commercial: 3200,
+};
+
+/** Средняя ориентировочная ставка для каталога и коммуникаций (₽/м²). */
+export const SNOW_REMOVAL_AVERAGE_RATE_PER_SQM = 50;
 
 export const EXTRA_SERVICES: ExtraServiceDefinition[] = [
   {

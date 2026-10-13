@@ -8,43 +8,47 @@ import type { RoomCount } from "@/constants/cleaning-calculator";
 import { ROOM_COUNT_OPTIONS } from "@/constants/cleaning-calculator";
 import { cn } from "@/lib/utils";
 
+type RoomCountOption = { value: RoomCount; label: string };
+
 type RoomCounterProps = {
   value: RoomCount;
   onChange: (value: RoomCount) => void;
   variant?: "chips" | "stepper";
+  legend?: string;
+  countOptions?: readonly RoomCountOption[];
 };
 
 export function RoomCounter({
   value,
   onChange,
   variant = "chips",
+  legend = "Количество комнат",
+  countOptions = ROOM_COUNT_OPTIONS,
 }: RoomCounterProps) {
   if (variant === "stepper") {
-    const currentIndex = ROOM_COUNT_OPTIONS.findIndex(
+    const currentIndex = countOptions.findIndex(
       (option) => option.value === value,
     );
 
     const decrease = () => {
-      const prev = ROOM_COUNT_OPTIONS[Math.max(0, currentIndex - 1)];
+      const prev = countOptions[Math.max(0, currentIndex - 1)];
       if (prev) onChange(prev.value);
     };
 
     const increase = () => {
       const next =
-        ROOM_COUNT_OPTIONS[
-          Math.min(ROOM_COUNT_OPTIONS.length - 1, currentIndex + 1)
-        ];
+        countOptions[Math.min(countOptions.length - 1, currentIndex + 1)];
       if (next) onChange(next.value);
     };
 
     const label =
-      ROOM_COUNT_OPTIONS.find((option) => option.value === value)?.label ??
+      countOptions.find((option) => option.value === value)?.label ??
       String(value);
 
     return (
       <fieldset className="flex flex-col gap-3">
         <legend className="text-sm font-medium text-foreground">
-          Количество комнат
+          {legend}
         </legend>
         <div className="flex items-center gap-3">
           <Button
@@ -86,11 +90,9 @@ export function RoomCounter({
 
   return (
     <fieldset className="flex flex-col gap-3">
-      <legend className="text-sm font-medium text-foreground">
-        Количество комнат
-      </legend>
+      <legend className="text-sm font-medium text-foreground">{legend}</legend>
       <div className="flex flex-wrap gap-2">
-        {ROOM_COUNT_OPTIONS.map((option) => (
+        {countOptions.map((option) => (
           <Tag
             key={option.value}
             type="button"

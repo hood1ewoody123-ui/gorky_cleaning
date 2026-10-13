@@ -110,6 +110,10 @@ export const SERVICE_LANDING_GROUPS: ServiceLandingGroup[] = [
         slug: "uborka-posle-zatopleniya",
         label: "Уборка после затопления",
       },
+      {
+        slug: "chistka-snega",
+        label: "Чистка снега",
+      },
     ],
   },
 ];

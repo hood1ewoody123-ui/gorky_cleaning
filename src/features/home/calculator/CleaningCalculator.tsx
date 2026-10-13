@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   DEFAULT_CALCULATOR_STATE,
+  SNOW_TERRITORY_SIZE_OPTIONS,
+  isSnowRemovalCleaningType,
   type CleaningTypeId,
   type ObjectTypeId,
   type RoomCount,
@@ -49,6 +51,16 @@ export function CleaningCalculator() {
     DEFAULT_CALCULATOR_STATE.extras,
   );
   const [mobileStep, setMobileStep] = useState(0);
+  const isSnowRemoval = isSnowRemovalCleaningType(cleaningType);
+  const roomCounterLegend = isSnowRemoval
+    ? "Примерная площадь участка"
+    : "Количество комнат";
+  const roomCounterOptions = isSnowRemoval
+    ? SNOW_TERRITORY_SIZE_OPTIONS
+    : undefined;
+  const priceAreaContextLabel = isSnowRemoval
+    ? "учитываем тип объекта и объём работ"
+    : "финальная цена после уточнения деталей";
 
   const breakdown = useMemo(
     () =>
@@ -87,7 +99,11 @@ export function CleaningCalculator() {
           extras,
           total: breakdown.total,
         }),
-        area: formatCalculatorAreaLabel(rooms, breakdown.estimatedArea),
+        area: formatCalculatorAreaLabel(
+          rooms,
+          breakdown.estimatedArea,
+          cleaningType,
+        ),
         metadata: {
           objectType,
           rooms,
@@ -114,6 +130,7 @@ export function CleaningCalculator() {
       <PriceSummary
         total={breakdown.total}
         estimatedArea={breakdown.estimatedArea}
+        areaContextLabel={priceAreaContextLabel}
       />
       <div className="rounded-[var(--radius-lg)] border border-border/60 bg-white p-5 shadow-[var(--shadow-card)] md:p-6">
         <p className="mb-4 text-sm font-medium text-foreground">
@@ -152,7 +169,13 @@ export function CleaningCalculator() {
             <ObjectSelector value={objectType} onChange={setObjectType} />
           ) : null}
           {mobileStep === 1 ? (
-            <RoomCounter value={rooms} onChange={setRooms} variant="stepper" />
+            <RoomCounter
+              value={rooms}
+              onChange={setRooms}
+              variant="stepper"
+              legend={roomCounterLegend}
+              countOptions={roomCounterOptions}
+            />
           ) : null}
           {mobileStep === 2 ? (
             <CleaningTypeSelector
@@ -169,6 +192,7 @@ export function CleaningCalculator() {
                 total={breakdown.total}
                 estimatedArea={breakdown.estimatedArea}
                 compact
+                areaContextLabel={priceAreaContextLabel}
               />
               <LeadForm onSubmit={handleLeadSubmit} />
             </div>
@@ -207,7 +231,12 @@ export function CleaningCalculator() {
     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] lg:items-start lg:gap-10 xl:gap-12">
       <div className="flex flex-col gap-6 rounded-[var(--radius-lg)] border border-border/60 bg-white p-5 shadow-[var(--shadow-card)] md:p-6 lg:p-8">
         <ObjectSelector value={objectType} onChange={setObjectType} />
-        <RoomCounter value={rooms} onChange={setRooms} />
+        <RoomCounter
+          value={rooms}
+          onChange={setRooms}
+          legend={roomCounterLegend}
+          countOptions={roomCounterOptions}
+        />
         <CleaningTypeSelector value={cleaningType} onChange={setCleaningType} />
         <ExtraServicesList values={extras} onChange={handleExtraChange} />
       </div>

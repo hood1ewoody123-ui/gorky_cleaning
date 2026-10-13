@@ -10,6 +10,7 @@ type PriceSummaryProps = {
   estimatedArea: number;
   className?: string;
   compact?: boolean;
+  areaContextLabel?: string;
 };
 
 export function PriceSummary({
@@ -17,6 +18,7 @@ export function PriceSummary({
   estimatedArea,
   className,
   compact = false,
+  areaContextLabel = "финальная цена после уточнения деталей",
 }: PriceSummaryProps) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -43,7 +45,7 @@ export function PriceSummary({
       </motion.p>
 
       <p className="mt-2 text-xs text-muted-foreground md:text-sm">
-        Расчёт для ~{estimatedArea} м² · финальная цена после уточнения деталей
+        Расчёт для ~{estimatedArea} м² · {areaContextLabel}
       </p>
     </div>
   );

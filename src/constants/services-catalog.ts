@@ -138,6 +138,14 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
     priceSuffix: "₽/м²",
   },
   {
+    id: "house-snow-removal",
+    categoryId: "houses",
+    name: "Чистка снега",
+    unitLabel: "м²",
+    priceFrom: 50,
+    priceSuffix: "₽/м²",
+  },
+  {
     id: "house-garage",
     categoryId: "houses",
     name: "Уборка гаража",
@@ -213,6 +221,14 @@ export const SERVICE_CATALOG_ITEMS: ServiceCatalogItem[] = [
   },
 
   // Помещения
+  {
+    id: "premises-snow-removal",
+    categoryId: "premises",
+    name: "Чистка снега на территории объекта",
+    unitLabel: "м²",
+    priceFrom: 50,
+    priceSuffix: "₽/м²",
+  },
   {
     id: "premises-warehouse",
     categoryId: "premises",

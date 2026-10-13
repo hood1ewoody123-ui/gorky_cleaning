@@ -1,7 +1,9 @@
 import {
   CLEANING_TYPE_OPTIONS,
-  OBJECT_TYPE_OPTIONS,
   EXTRA_SERVICES,
+  OBJECT_TYPE_OPTIONS,
+  SNOW_TERRITORY_SIZE_OPTIONS,
+  isSnowRemovalCleaningType,
   type CleaningTypeId,
   type ObjectTypeId,
   type RoomCount,
@@ -31,8 +33,13 @@ export function formatCalculatorServiceSummary(input: {
     )
     .join("; ");
 
+  const sizeLabel = isSnowRemovalCleaningType(input.cleaningType)
+    ? (SNOW_TERRITORY_SIZE_OPTIONS.find((item) => item.value === input.rooms)
+        ?.label ?? `~${input.rooms} м²`)
+    : `${input.rooms === 5 ? "5+" : input.rooms} комн.`;
+
   const parts = [
-    `${cleaningLabel}, ${objectLabel}, ${input.rooms === 5 ? "5+" : input.rooms} комн.`,
+    `${cleaningLabel}, ${objectLabel}, ${sizeLabel}`,
     `≈ ${formatRubles(input.total)} ₽`,
   ];
 
@@ -46,6 +53,14 @@ export function formatCalculatorServiceSummary(input: {
 export function formatCalculatorAreaLabel(
   rooms: RoomCount,
   estimatedArea: number,
+  cleaningType?: CleaningTypeId,
 ): string {
+  if (cleaningType && isSnowRemovalCleaningType(cleaningType)) {
+    const tierLabel =
+      SNOW_TERRITORY_SIZE_OPTIONS.find((item) => item.value === rooms)?.label ??
+      `~${estimatedArea} м²`;
+    return `~${estimatedArea} м² (${tierLabel})`;
+  }
+
   return `~${estimatedArea} м² (${rooms === 5 ? "5+" : rooms} комн.)`;
 }

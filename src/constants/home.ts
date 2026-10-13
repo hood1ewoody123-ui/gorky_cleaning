@@ -42,5 +42,6 @@ export const CLEANING_TYPE_OPTIONS = [
   { value: "general", label: "Генеральная уборка" },
   { value: "maintenance", label: "Поддерживающая уборка" },
   { value: "after-renovation", label: "После ремонта" },
+  { value: "snow-removal", label: "Чистка снега" },
   { value: "windows", label: "Мытьё окон" },
 ] as const;

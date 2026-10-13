@@ -3,6 +3,9 @@ import {
   EXTRA_SERVICES,
   MIN_ORDER_AMOUNT,
   ROOM_AREA_ESTIMATE,
+  SNOW_MIN_ORDER_AMOUNT,
+  SNOW_TERRITORY_AREA_ESTIMATE,
+  isSnowRemovalCleaningType,
   type CleaningTypeId,
   type ObjectTypeId,
   type RoomCount,
@@ -25,10 +28,16 @@ export type CalculatorBreakdown = {
 export function calculateCleaningPrice(
   input: CalculatorInput,
 ): CalculatorBreakdown {
-  const estimatedArea = ROOM_AREA_ESTIMATE[input.rooms];
+  const isSnowRemoval = isSnowRemovalCleaningType(input.cleaningType);
+  const estimatedArea = isSnowRemoval
+    ? SNOW_TERRITORY_AREA_ESTIMATE[input.rooms]
+    : ROOM_AREA_ESTIMATE[input.rooms];
   const rate = CLEANING_RATES[input.objectType][input.cleaningType];
   const rawBase = estimatedArea * rate;
-  const basePrice = Math.max(rawBase, MIN_ORDER_AMOUNT[input.objectType]);
+  const minOrder = isSnowRemoval
+    ? SNOW_MIN_ORDER_AMOUNT[input.objectType]
+    : MIN_ORDER_AMOUNT[input.objectType];
+  const basePrice = Math.max(rawBase, minOrder);
 
   let extrasPrice = 0;
 
