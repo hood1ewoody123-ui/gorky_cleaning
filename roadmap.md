@@ -9,7 +9,7 @@
 - `- [x]` — выполнено (крестик в чекбоксе)
 - `- [ ]` — ожидает выполнения
 
-**Текущий этап:** Этап 13 — деплой на Timeweb (рядом с другим сайтом)
+**Текущий этап:** Этап 14 — PostgreSQL (заявки в `gorky_db`)
 
 ---
 
@@ -404,6 +404,24 @@ Small:
 
 ---
 
+# ЭТАП 14
+
+## PostgreSQL — сохранение заявок
+
+Инструкция для VPS: `deploy/POSTGRES.md`. База `gorky_db` уже существует — не пересоздавать.
+
+- [x] SQL-миграция `leads` (`db/migrations/`)
+- [x] Роли `gorky_app` / `gorky_migrate` (скрипт `db/roles.sql`)
+- [x] DB-first API: валидация → INSERT → Telegram → статусы доставки
+- [x] HTTP 503 при недоступности БД; заявка сохраняется при сбое Telegram
+- [x] Golden-тесты формата Telegram; тесты INSERT / ошибок БД
+- [x] `.env.example` + `DATABASE_*` без секретов
+- [x] Повторная отправка Telegram без дублей (`npm run retry:telegram`)
+- [x] Применить миграции на VPS (админ, не из CI)
+- [ ] Прописать `DATABASE_URL` в `.env.production` и `pm2 restart --update-env`
+
+---
+
 # ЭТАП 7
 
 ## SEO
@@ -504,6 +522,9 @@ Small:
 - [ ] `NEXT_PUBLIC_YANDEX_METRIKA_ID=110396882`
 - [ ] `TELEGRAM_BOT_TOKEN`
 - [ ] `TELEGRAM_CHAT_ID` (chat id аккаунта @prtcreator или группы)
+- [ ] `DATABASE_URL` (роль `gorky_app`, см. `deploy/POSTGRES.md`)
+- [ ] `DATABASE_SSL=disable` (loopback на VPS)
+- [ ] `LEAD_IP_HASH_PEPPER`
 
 ### На сервере
 

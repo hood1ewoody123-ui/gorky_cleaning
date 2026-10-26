@@ -28,16 +28,25 @@ export const optionalLeadEmailField = z
     "Укажите корректный email",
   );
 
+/** Honeypot: real forms never send this. Non-empty → silent discard. */
+export const leadHoneypotField = z.string().max(200).optional();
+
 export const leadApiSchema = z.object({
-  source: z.string().min(1),
-  page: z.string().min(1),
-  name: leadNameField,
+  source: z.string().min(1).max(120),
+  page: z.string().min(1).max(500),
+  name: leadNameField.max(120),
   phone: leadPhoneField,
-  service: z.string().min(1),
-  area: z.string().min(1),
+  service: z.string().min(1).max(500),
+  area: z.string().min(1).max(200),
   email: optionalLeadEmailField.optional(),
-  comment: z.string().optional(),
+  comment: z.string().max(2000).optional(),
   metadata: z.record(z.string(), z.unknown()).optional(),
+  /** Anti-spam honeypot — must stay empty */
+  website: leadHoneypotField,
 });
 
 export type LeadApiInput = z.infer<typeof leadApiSchema>;
+
+export function isHoneypotTriggered(input: LeadApiInput): boolean {
+  return Boolean(input.website && input.website.trim().length > 0);
+}

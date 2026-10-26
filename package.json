@@ -11,6 +11,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "retry:telegram": "tsx scripts/retry-telegram-leads.ts",
     "prepare": "husky"
   },
   "dependencies": {
@@ -22,6 +25,7 @@
     "lucide-react": "^1.23.0",
     "motion": "^12.42.2",
     "next": "16.2.10",
+    "pg": "^8.23.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hook-form": "^7.81.0",
@@ -35,6 +39,7 @@
     "@commitlint/config-conventional": "^21.2.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
@@ -44,7 +49,9 @@
     "lint-staged": "^17.0.8",
     "prettier": "^3.9.4",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^3.2.4"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs,json,css,md}": [

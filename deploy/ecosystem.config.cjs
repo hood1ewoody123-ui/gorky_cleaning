@@ -9,7 +9,7 @@ module.exports = {
       name: "gorkycleaning",
       cwd: "/var/www/gorkycleaning",
       script: "npm",
-      args: "start -- -p 3002",
+      args: "start -- -p 3002 -H 127.0.0.1",
       env: {
         NODE_ENV: "production",
         PORT: "3002",

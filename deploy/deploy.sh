@@ -8,11 +8,11 @@ ENV_FILE="$APP_DIR/.env.production"
 cd "$APP_DIR"
 
 if [[ ! -f "$ENV_FILE" ]]; then
-  echo "✗ Нет $ENV_FILE — создайте файл с TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID"
+  echo "✗ Нет $ENV_FILE — создайте файл с TELEGRAM_* и DATABASE_URL (см. .env.example / deploy/POSTGRES.md)"
   exit 1
 fi
 
-for key in TELEGRAM_BOT_TOKEN TELEGRAM_CHAT_ID NEXT_PUBLIC_SITE_URL; do
+for key in TELEGRAM_BOT_TOKEN TELEGRAM_CHAT_ID NEXT_PUBLIC_SITE_URL DATABASE_URL; do
   if ! grep -q "^${key}=" "$ENV_FILE"; then
     echo "✗ В $ENV_FILE не найден ${key}=..."
     exit 1
@@ -22,8 +22,10 @@ done
 echo "→ git pull"
 git pull --ff-only
 
-echo "→ npm ci"
-npm ci
+echo "→ npm ci (production: без husky, без engine-strict)"
+export HUSKY=0
+export NPM_CONFIG_ENGINE_STRICT=false
+npm ci --no-audit --no-fund --prefer-offline
 
 echo "→ build"
 npm run build
